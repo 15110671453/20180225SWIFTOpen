@@ -1,0 +1,249 @@
+swift package 使用 2018 回顾
+
+macserver:dailyspace admindyn$ git clone https://github.com/huhuegg/SPMTest.git
+Cloning into 'SPMTest'...
+remote: Counting objects: 51, done.
+remote: Total 51 (delta 0), reused 0 (delta 0), pack-reused 51
+Unpacking objects: 100% (51/51), done.
+
+macserver:dailyspace admindyn$ cd SPMTest/
+
+macserver:SPMTest admindyn$ swift package init --type library
+Creating library package: SPMTest
+error: a manifest file already exists in this directory
+macserver:SPMTest admindyn$ 
+
+
+macserver:SPMTest admindyn$ cd /Users/admindyn/Desktop/dailyspace 
+macserver:dailyspace admindyn$ 
+
+mkdir ExeSwiftPackage
+
+
+cd  ExeSwiftPackage
+
+
+
+macserver:ExeSwiftPackage admindyn$ swift package init --type executable
+Creating executable package: ExeSwiftPackage
+Creating Package.swift
+Creating README.md
+Creating .gitignore
+Creating Sources/
+Creating Sources/ExeSwiftPackage/main.swift
+Creating Tests/
+macserver:ExeSwiftPackage admindyn$ 
+
+
+将 之前制作的库 SPMTest 复制粘贴到ExeSwiftPackage目录下 与 ExeSwiftPackage 的 Package.swift 同一级目录
+
+SPMTest
+
+
+修改ExeSwiftPackage目录的包描述文件
+
+
+import PackageDescription
+
+
+
+
+let package = Package(
+    name: "ExeSwiftPackage",
+    dependencies: [
+        // Dependencies declare other packages that this package depends on.
+        // .package(url: /* package url */, from: "1.0.0"),
+        .package(url: "./SPMTest",from: "1.0.0"),
+
+
+    ],
+    targets: [
+        // Targets are the basic building blocks of a package. A target can define a module or a test suite.
+        // Targets can depend on other targets in this package, and on products in packages which this package depends on.
+        .target(
+            name: "ExeSwiftPackage",
+            dependencies: []),
+    ]
+)
+
+
+Fetching /Users/admindyn/Desktop/dailyspace
+error: failed to clone; fatal: repository '/Users/admindyn/Desktop/dailyspace' does not exist
+macserver:ExeSwiftPackage admindyn$ 
+
+以上执行失败 是因为 在执行前 源码库包没有添加到描述文件 指定的路径下
+
+以上修改 主要是 对当前ExeSwiftPackage 添加工程以来包 指明依赖包
+名为SPMTest 依赖包路径 并指定  已经之前导入 与 ExeSwiftPackage的Package.swift 同一级目录
+
+macserver:ExeSwiftPackage admindyn$ swift package generate-xcodeproj
+Fetching /Users/admindyn/Desktop/dailyspace/ExeSwiftPackage/SPMTest
+Cloning /Users/admindyn/Desktop/dailyspace/ExeSwiftPackage/SPMTest
+Resolving /Users/admindyn/Desktop/dailyspace/ExeSwiftPackage/SPMTest at 1.0.0
+error: invalid target name at 'Tests/SPMTest'; name of test targets must end in 'Tests'
+macserver:ExeSwiftPackage admindyn$ 
+
+是因为xcode 修改了规则吗  测试代码的测试文件夹必须时Tests结尾 发现不是这个问题
+
+我们需要注意 创建swift 库  与 应用程序 对应的测试方法不同
+
+创建应用程序 我们使用 swift build 构建应用程序测试
+
+创建库  我们测试 
+
+实际上，库和可执行包的区别就在于有没有 main.swift。
+
+这次我们需要用一个测试。用 swift test 来运行这个测试。Swift 包管理器会编译库并运行测试。
+
+注意：你会在 Tests/ 目录下看到 LinuxMain.swift 文件，在 AtlasTests 的测试案例类中还有一个 allTests 属性。对于要在 Linux 上运行 XCTest 测试而言，这两者都是必须的。Linux 没有 O-C 运行时，而 O-C 运行时会自动查找以 test 开头的方法并运行它。每当添加一个测试方法，你都需要修改这个 allTests 属性，每当添加一个新的测试案例类，你都需要修改 LinuxMain.swift。
+
+
+
+###根据官方文档实践###
+
+第一 建立swift 库文件目录PlayingCard
+
+并切换到该目录下执行
+
+macserver:PlayingCard admindyn$ swift package init --type library
+Creating library package: PlayingCard
+Creating Package.swift
+Creating README.md
+Creating Tests/
+Creating Tests/LinuxMain.swift
+Creating Tests/PlayingCardTests/
+Creating Tests/PlayingCardTests/PlayingCardTests.swift
+
+这里没有自动创建Sources 目录 因为 我们在PlayingCard 下 已经创建过该文件
+
+并且从其他地方 移进去了 需要的源码 不用重新编写
+
+
+
+macserver:PlayingCard admindyn$  swift build
+Compile Swift Module 'PlayingCard' (3 sources)
+macserver:PlayingCard admindyn$  
+
+
+以上 swift build 说明 我们的测试库 没问题
+
+
+第二 创建库2
+
+macserver:dailyspace admindyn$ cd FishYates/
+macserver:FishYates admindyn$ swift package init --type library
+Creating library package: FishYates
+Creating Package.swift
+Creating README.md
+Creating .gitignore
+Creating Sources/
+Creating Sources/FishYates/FishYates.swift
+Creating Tests/
+Creating Tests/LinuxMain.swift
+Creating Tests/FishYatesTests/
+Creating Tests/FishYatesTests/FishYatesTests.swift
+macserver:FishYates admindyn$ 
+
+
+第三 创建库 3
+macserver:DeckOfPlayingCards admindyn$ swift package init --type library
+Creating library package: DeckOfPlayingCards
+Creating Package.swift
+Creating README.md
+Creating .gitignore
+Creating Sources/
+Creating Sources/DeckOfPlayingCards/DeckOfPlayingCards.swift
+Creating Tests/
+Creating Tests/LinuxMain.swift
+Creating Tests/DeckOfPlayingCardsTests/
+Creating Tests/DeckOfPlayingCardsTests/DeckOfPlayingCardsTests.swift
+
+第四 创建可执行程序
+
+macserver:Dealer admindyn$ swift package init --type executable
+Creating executable package: Dealer
+Creating Package.swift
+Creating README.md
+Creating .gitignore
+Creating Sources/
+Creating Sources/Dealer/main.swift
+Creating Tests/
+macserver:Dealer admindyn$
+
+
+
+第五 注意 几个包 引用  由于SPM 仅支持git 因此 虽然 我们是
+
+本地文件包库 引用 但是我们需要 用SPM方式管理的就需要 到各自的包库 下 使用
+
+Now if you run swift build you'll fail to build your sources. That's because the SPM only works with git repositories. This means you have to create a repository for your library. Let's move to the directory of the library and run the following commands.
+
+git init
+git add .
+git commit -m 'initial'
+git tag 1.0.0
+
+第一个库包 做成git 本地仓库 
+
+macserver:Dealer admindyn$ cd  /Users/admindyn/Desktop/dailyspace/SwiftSPM1/DeckOfPlayingCards 
+macserver:DeckOfPlayingCards admindyn$ git init
+Initialized empty Git repository in /Users/admindyn/Desktop/dailyspace/SwiftSPM1/DeckOfPlayingCards/.git/
+macserver:DeckOfPlayingCards admindyn$ git add .
+macserver:DeckOfPlayingCards admindyn$ git commit -m 'initial'
+[master (root-commit) 8cf8425] initial
+ 6 files changed, 100 insertions(+)
+ create mode 100644 .gitignore
+ create mode 100644 Package.swift
+ create mode 100644 README.md
+ create mode 100644 Sources/DeckOfPlayingCards/DeckOfPlayingCards.swift
+ create mode 100644 Tests/DeckOfPlayingCardsTests/DeckOfPlayingCardsTests.swift
+ create mode 100644 Tests/LinuxMain.swift
+macserver:DeckOfPlayingCards admindyn$ 
+
+
+
+第二个库  做成git  
+
+
+macserver:DeckOfPlayingCards admindyn$  cd /Users/admindyn/Desktop/dailyspace/SwiftSPM1/FishYates 
+macserver:FishYates admindyn$ git init
+Initialized empty Git repository in /Users/admindyn/Desktop/dailyspace/SwiftSPM1/FishYates/.git/
+macserver:FishYates admindyn$ git add .
+macserver:FishYates admindyn$ git commit -m 'initial'
+[master (root-commit) 1f1dfc6] initial
+ 7 files changed, 98 insertions(+)
+ create mode 100644 .gitignore
+ create mode 100644 Package.swift
+ create mode 100644 README.md
+ create mode 100644 Sources/FishYates/FishYates.swift
+ create mode 100644 Sources/FishYates/random.swift
+ create mode 100644 Tests/FishYatesTests/FishYatesTests.swift
+ create mode 100644 Tests/LinuxMain.swift
+macserver:FishYates admindyn$ 
+
+
+
+第三个库 做成git
+
+macserver:FishYates admindyn$ cd /Users/admindyn/Desktop/dailyspace/SwiftSPM1/PlayingCard 
+macserver:PlayingCard admindyn$ git init
+Initialized empty Git repository in /Users/admindyn/Desktop/dailyspace/SwiftSPM1/PlayingCard/.git/
+macserver:PlayingCard admindyn$ git add .
+macserver:PlayingCard admindyn$ git commit -m 'initial'
+[master (root-commit) e52d2ad] initial
+ 8 files changed, 69 insertions(+)
+ create mode 100644 .gitignore
+ create mode 100644 Package.swift
+ create mode 100644 README.md
+ create mode 100644 Sources/PlayingCard/PlayingCard.swift
+ create mode 100644 Sources/PlayingCard/Rank.swift
+ create mode 100644 Sources/PlayingCard/Suit.swift
+ create mode 100644 Tests/LinuxMain.swift
+ create mode 100644 Tests/PlayingCardTests/PlayingCardTests.swift
+macserver:PlayingCard admindyn$
+
+
+
+
+macserver:DeckOfPlayingCards admindyn$  swift package tools-version
+4.0.0
