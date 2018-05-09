@@ -10,11 +10,12 @@
 
 
 
-void cFunc(char *str)
+void cFuncStr(const char *str)
 {
-    printf("输出c字符串 %s",str);
+    printf("输出c字符串 %s \n",str);
 }
-void cFuncInt(int *str)
+void cFuncInt(const int *str)
 {
     printf("输出c数组 %lx",str);
+     printf("输出c数组 首元素 %lx \n",*str);
 }

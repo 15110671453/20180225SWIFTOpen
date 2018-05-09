@@ -16,6 +16,12 @@
 
 import Foundation
 
+
+
+
+
+
+
 struct Function_Data {
     var func1Ptr = 0
     var func2Ptr = 0
@@ -46,6 +52,35 @@ enum Value_Type:Int32 {
     case VALUE_TYPE_STRUCTV = 2
     
 }
+
+
+
+/*
+ 设计模式
+ https://legacy.gitbook.com/book/yourtion/swiftdesignpatterns/details
+ 
+ 如何在Swift中调用C
+ 比如 Redis 数据库的使用
+ 
+ http://hearrain.com/2015/12/850
+ 
+ 首先 明确c中const 使用规则
+ 
+ 只有被const直接修饰的变量最终指向的内容不可变（忽略变量类型修饰符，即int， long等）。
+ 
+ 在const int *p中，忽略掉int，被const直接修饰的是*p，*p最终指向指针p指向的地址的内容，所以该内容不可变（至少不可以使用*p进行修改），而变量p没有被const直接修饰，所以指正变量p最终指向的内容（也就是p本身的值）是可变的。这样这一句可以等效于int const *p。（这两种声明有没有其他的不同之处，笔者暂时还不清楚）
+ 
+ 在int * const p中，指针变量p本const直接修饰，所以p的内容（地址）是不可变的，而p指向的地址的内容（即*p）没有被const直接修饰，所以p指向的地址的内容是可变的，即*p可以被再赋值
+ 
+ Swift 中 UnsafePointer<Type>  等同于 C指针
+ const Type* p
+ 
+ UnsafeMutablePointer<Type> 等同于 C指针 Type* p
+ 
+ */
+
+
+
 
 let ob:POBJ = POBJ()
 
@@ -99,13 +134,54 @@ for (index,value) in stackM.items.enumerated()
 
 let size = 10
 
-let intPtr = UnsafeMutablePointer<Int>.allocate(capacity: size)
+let intPtr = UnsafeMutablePointer<Int32>.allocate(capacity: size)
 
 for idx in 0..<10 {
-    intPtr.advanced(by: idx).pointee = idx
+    intPtr.advanced(by: idx).pointee = Int32(idx)
 }
 
 intPtr.pointee = 100
+
+cFuncInt(intPtr)
+
+var strPtr = ["C指针","OC指针","Swift","JS-ES6","Python"]
+
+/*
+ Swift  中 虽然 沿用 有 c 的& 取地址符
+ 但是 功能有所不同  要真的取得指针 和C API 交互
+ 需要
+ */
+
+/*
+ 如果我们想对某个变量进行指针操作，我们可以借助withUnsafePointer这个辅助方法。这个方法接受两个参数，第一个是 inout的任意类型，第二个是一个闭包。Swift会将第一个输入转换为指针，然后将这个转换后的Unsafe的指针作为参数，去调用闭包
+ */
+
+print("Swift 字符串 到 c 字符串指针")
+
+var test = "C指针".withCString { (p:UnsafePointer<Int8>) -> Int8 in
+    cFuncStr(p)
+    
+    var pS =    UnsafeMutablePointer<Int8>.allocate(capacity: 8);
+        var idx = 0
+    
+    var lin = pS + idx
+
+    repeat {
+        pS.advanced(by: idx).pointee = p.advanced(by: idx).pointee
+        lin = pS + idx
+        print("-\(lin.pointee)")
+        
+      idx = idx + 1
+    }while(lin)
+    
+    return p.pointee
+}
+
+print("输出的是第一个字节的值 \(test)")
+
+
+
+
 
 let voidPtr = UnsafeRawPointer(intPtr)
 

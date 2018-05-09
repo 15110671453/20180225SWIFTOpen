@@ -17,6 +17,13 @@
 		EC5CCC7220523C9E00AFBD98 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5CCC7120523C9E00AFBD98 /* main.swift */; };
 		EC5CCC7920523CD200AFBD98 /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5CCC7820523CD200AFBD98 /* Test.swift */; };
 		EC5CCC7B20523E4600AFBD98 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5CCC7A20523E4600AFBD98 /* Person.swift */; };
+		ECF3B6BD20A2B34E00DB7571 /* POBJ.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF3B6BC20A2B34E00DB7571 /* POBJ.swift */; };
+		ECF3B6C120A2C31D00DB7571 /* CFramWork.c in Sources */ = {isa = PBXBuildFile; fileRef = ECF3B6BF20A2C31D00DB7571 /* CFramWork.c */; };
+		ECF3B6C420A2C34700DB7571 /* OCFramWork.m in Sources */ = {isa = PBXBuildFile; fileRef = ECF3B6C320A2C34700DB7571 /* OCFramWork.m */; };
+		ECF3B6C620A2D4F200DB7571 /* CopyArrayVSDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF3B6C520A2D4F200DB7571 /* CopyArrayVSDictionary.swift */; };
+		ECF3B6C820A2E1F700DB7571 /* Container.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF3B6C720A2E1F700DB7571 /* Container.swift */; };
+		ECF3B6CA20A2E37900DB7571 /* IntStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF3B6C920A2E37900DB7571 /* IntStack.swift */; };
+		ECF3B6CC20A2E59500DB7571 /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF3B6CB20A2E59500DB7571 /* Stack.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -43,6 +50,16 @@
 		EC5CCC7120523C9E00AFBD98 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		EC5CCC7820523CD200AFBD98 /* Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Test.swift; sourceTree = "<group>"; };
 		EC5CCC7A20523E4600AFBD98 /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
+		ECF3B6BC20A2B34E00DB7571 /* POBJ.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = POBJ.swift; sourceTree = "<group>"; };
+		ECF3B6BE20A2C31C00DB7571 /* SwiftBasicMac-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SwiftBasicMac-Bridging-Header.h"; sourceTree = "<group>"; };
+		ECF3B6BF20A2C31D00DB7571 /* CFramWork.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = CFramWork.c; sourceTree = "<group>"; };
+		ECF3B6C020A2C31D00DB7571 /* CFramWork.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CFramWork.h; sourceTree = "<group>"; };
+		ECF3B6C220A2C34700DB7571 /* OCFramWork.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OCFramWork.h; sourceTree = "<group>"; };
+		ECF3B6C320A2C34700DB7571 /* OCFramWork.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OCFramWork.m; sourceTree = "<group>"; };
+		ECF3B6C520A2D4F200DB7571 /* CopyArrayVSDictionary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CopyArrayVSDictionary.swift; sourceTree = "<group>"; };
+		ECF3B6C720A2E1F700DB7571 /* Container.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Container.swift; sourceTree = "<group>"; };
+		ECF3B6C920A2E37900DB7571 /* IntStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntStack.swift; sourceTree = "<group>"; };
+		ECF3B6CB20A2E59500DB7571 /* Stack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stack.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,7 +92,12 @@
 		EC5CCC7020523C9E00AFBD98 /* SwiftBasicMac */ = {
 			isa = PBXGroup;
 			children = (
+				ECF3B6BB20A2B34200DB7571 /* POBJ */,
 				EC5CCC7120523C9E00AFBD98 /* main.swift */,
+				ECF3B6C720A2E1F700DB7571 /* Container.swift */,
+				ECF3B6C920A2E37900DB7571 /* IntStack.swift */,
+				ECF3B6CB20A2E59500DB7571 /* Stack.swift */,
+				ECF3B6C520A2D4F200DB7571 /* CopyArrayVSDictionary.swift */,
 				EC1C511320562EEB0033237E /* FuncOBJ.swift */,
 				EC1C5111205626600033237E /* SetOBJ.swift */,
 				EC1C510F205623020033237E /* DicOBJ.swift */,
@@ -85,8 +107,21 @@
 				EC1C510720560FF50033237E /* OptionalOBJ.swift */,
 				EC5CCC7A20523E4600AFBD98 /* Person.swift */,
 				EC5CCC7820523CD200AFBD98 /* Test.swift */,
+				ECF3B6BF20A2C31D00DB7571 /* CFramWork.c */,
+				ECF3B6C020A2C31D00DB7571 /* CFramWork.h */,
+				ECF3B6BE20A2C31C00DB7571 /* SwiftBasicMac-Bridging-Header.h */,
+				ECF3B6C220A2C34700DB7571 /* OCFramWork.h */,
+				ECF3B6C320A2C34700DB7571 /* OCFramWork.m */,
 			);
 			path = SwiftBasicMac;
+			sourceTree = "<group>";
+		};
+		ECF3B6BB20A2B34200DB7571 /* POBJ */ = {
+			isa = PBXGroup;
+			children = (
+				ECF3B6BC20A2B34E00DB7571 /* POBJ.swift */,
+			);
+			path = POBJ;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -121,6 +156,7 @@
 				TargetAttributes = {
 					EC5CCC6D20523C9E00AFBD98 = {
 						CreatedOnToolsVersion = 9.2;
+						LastSwiftMigration = 0920;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -147,14 +183,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ECF3B6C120A2C31D00DB7571 /* CFramWork.c in Sources */,
 				EC5CCC7B20523E4600AFBD98 /* Person.swift in Sources */,
 				EC1C511420562EEB0033237E /* FuncOBJ.swift in Sources */,
+				ECF3B6CC20A2E59500DB7571 /* Stack.swift in Sources */,
 				EC1C510A205614E70033237E /* Guard.swift in Sources */,
 				EC1C5110205623020033237E /* DicOBJ.swift in Sources */,
+				ECF3B6C420A2C34700DB7571 /* OCFramWork.m in Sources */,
 				EC1C510E205621730033237E /* ArrayOBJ.swift in Sources */,
+				ECF3B6C820A2E1F700DB7571 /* Container.swift in Sources */,
+				ECF3B6BD20A2B34E00DB7571 /* POBJ.swift in Sources */,
 				EC1C5112205626600033237E /* SetOBJ.swift in Sources */,
+				ECF3B6CA20A2E37900DB7571 /* IntStack.swift in Sources */,
 				EC1C510820560FF50033237E /* OptionalOBJ.swift in Sources */,
 				EC1C510C20561EC00033237E /* Loop.swift in Sources */,
+				ECF3B6C620A2D4F200DB7571 /* CopyArrayVSDictionary.swift in Sources */,
 				EC5CCC7220523C9E00AFBD98 /* main.swift in Sources */,
 				EC5CCC7920523CD200AFBD98 /* Test.swift in Sources */,
 			);
@@ -272,9 +315,13 @@
 		EC5CCC7620523C9E00AFBD98 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 58W4HKZ65K;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "SwiftBasicMac/SwiftBasicMac-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
@@ -282,9 +329,12 @@
 		EC5CCC7720523C9E00AFBD98 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 58W4HKZ65K;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "SwiftBasicMac/SwiftBasicMac-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 			};
 			name = Release;

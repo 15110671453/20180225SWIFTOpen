@@ -10,8 +10,8 @@
 #define CFramWork_h
 
 #include <stdio.h>
-void cFunc(char *str);
-void cFuncInt(int *str);
+void cFuncStr(const char *str);
+void cFuncInt(const int *str);
 void generic_function(int value_type, void* value);
 
 
