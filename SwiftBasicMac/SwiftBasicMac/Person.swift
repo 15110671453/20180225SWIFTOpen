@@ -30,6 +30,7 @@ class Person {
         
         print("用户id:\(userid) 名字:\(name) 年龄:\(age) 身高:\(h)")
          print("用户id:\(student1.0) 名字:\(student1.1) 年龄:\(student1.2) 身高:\(student1.3)")
+        print(self.name)
     }
     
     
