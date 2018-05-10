@@ -17,7 +17,25 @@
 import Foundation
 
 
+//MARK:-  文件操作 C
 
+enum RandomSource {
+    
+    static let file = fopen("/dev/urandom", "r")!
+    static let queue = DispatchQueue(label: "random")
+    
+    static func get(count: Int) -> [Int8] {
+        let capacity = count + 1 // fgets adds null termination
+        var data = UnsafeMutablePointer<Int8>.allocate(capacity: capacity)
+        defer {
+            data.deallocate(capacity: capacity)
+        }
+        queue.sync {
+            fgets(data, Int32(capacity), file)
+        }
+        return Array(UnsafeMutableBufferPointer(start: data, count: count))
+    }
+}
 
 
 
@@ -157,31 +175,271 @@ var strPtr = ["C指针","OC指针","Swift","JS-ES6","Python"]
  */
 
 print("Swift 字符串 到 c 字符串指针")
+/*
+ Swift 开辟内存  指针操作
+ 
+ 几个生命周期
+ 
+ 第一 开辟内存 内存引用到
+ 
+ 第二 内存初始化
+ You can use methods like initialize(to:count:), initialize(from:), and moveInitialize(from:count:) to initialize the memory referenced by a pointer with a value or series of values.
+ 
+ Initialized Memory
+ Initialized memory has a value that can be read using a pointer’s pointee property or through subscript notation. In the following example, ptr is a pointer to memory initialized with a value of 23:
+ let ptr: UnsafeMutablePointer<Int> = ...
+ // ptr.pointee == 23
+ // ptr[0] == 23
+ 
+ */
 
-var test = "C指针".withCString { (p:UnsafePointer<Int8>) -> Int8 in
-    cFuncStr(p)
-    
-    var pS =    UnsafeMutablePointer<Int8>.allocate(capacity: 8);
-        var idx = 0
-    
-    var lin = pS + idx
+ /*
+ 被UnsafeMutablePointe引用的内存有三种状态：
+ 
+ 1. Not Allocated
+ 
+ 2. Allocated but not initialized
+ 
+ 3. Allocated and initialized
+ 
+ 只有在状态3时，可以安全的使用pointee属性来set和get。
+ */
 
-    repeat {
-        pS.advanced(by: idx).pointee = p.advanced(by: idx).pointee
-        lin = pS + idx
-        print("-\(lin.pointee)")
-        
-      idx = idx + 1
-    }while(lin)
+//MARK:- UnsafeMutablePointer
+let uint8Pointer = UnsafeMutablePointer<UInt8>.allocate(capacity: 8)
+
+uint8Pointer.initialize(from: [39, 77, 111, 111, 102, 33, 39, 0])
+/*
+ The following code temporarily rebinds the memory that uint8Pointer references from UInt8 to Int8 to call the imported C strlen function.
+ */
+/*
+ When you only need to temporarily access a pointer’s memory as a different type
+ C 指针类型转换  临时
+ */
+//MARK:- C指针内存类型临时转换1
+let len = uint8Pointer.withMemoryRebound(to: Int8.self, capacity: 8) { (p:UnsafeMutablePointer<Int8>) ->  Int8 in
+  
     
-    return p.pointee
+    
+    return Int8(cFuncStrlen(p))
+    
+}
+print("c 获取 字符串长度 \(len)")
+
+/*
+ C 指针类型转换 永远
+ When you need to permanently rebind memory to a different type, first obtain a raw pointer to the memory and then call the bindMemory(to:capacity:) method on the raw pointer. The following example binds the memory referenced by uint8Pointer to one instance of the UInt64 type
+ 
+ After rebinding the memory referenced by uint8Pointer to UInt64, accessing that pointer’s referenced memory as a UInt8 instance is undefined
+ 
+ 
+ Unsafe[Mutable][Raw][Buffer]Pointer[<T>]
+ 
+ Pointer are just memory addresses
+ 
+ 
+ Direct memory access is Unsafe
+ 
+ 
+ Mutable means you can write to it
+ 
+ Raw mean it points to a blob of bytes
+ 
+ Buffer means that it works like a collection
+ 
+ Generic<T> pointer are typed
+ 
+ 
+*/
+
+//MARK:- C指针内存类型永久转换2
+//MARK:- UnsafeMutableRawPointer2
+/*
+ 原生指针需要绑定了类型后,使用UnsafeMutablePointer才能对内存进行赋值
+ */
+let uint64Pointer = UnsafeMutableRawPointer(uint8Pointer)
+    .bindMemory(to: UInt64.self, capacity: 1)
+
+var fullInteger = uint64Pointer.pointee          // OK
+var firstByte = uint8Pointer.pointee
+
+
+print("\(fullInteger) C指针 内存类型被改后 旧的引用指针操作为:\(firstByte)")
+
+let count = 2
+
+/*
+ Swift 提供 MemoryLayout 帮我们检测 结构体的内存大小
+ 
+ 内存对齐问题
+ 
+ MemoryLayout<Type> 是一个用于在编译时计算出特定类型(Type)的 size, alignment 以及 stride 的泛型类型。返回的数值以字节为单位。例如 Int16 类型的大小为 2 个字节，内存对齐为 2 个字节以及当我们需要连续排列多个 Int16 类型时，每一个 Int16 所需要占用的大小(stride)为 2 个字节。所有基本类型的 stride 都与 size 是一致的
+ */
+//表示了 Int 类型的 stride 单个Int 的字节数
+let stride = MemoryLayout<Int>.stride
+print("Swift中 Int 类型的 字节数默认:\(stride)")
+//表示了 Int 类型的内存对齐
+let alignment = MemoryLayout<Int>.alignment
+
+let byteCount = stride * count
+
+// 2
+do {
+    print("原生指针的 意义 就在于可以进行类型转换 读写操作")
+    
+    
+    //MARK:- UnsafeMutableRawPointer2
+    /*
+     原生指针需要绑定了类型后,使用UnsafeMutablePointer才能对内存进行赋值
+     */
+    let pointer = UnsafeMutableRawPointer.allocate(bytes: byteCount, alignedTo: alignment)
+    
+    
+    //MARK: - 使用 defer 来保证内存得到正确地释放。操作指针的时候，所有内存都需要我们手动进行管理
+    
+    
+    defer {
+        pointer.deallocate(bytes: byteCount, alignedTo: alignment)
+    }
+    
+   
+    pointer.storeBytes(of: 42, as: Int.self)
+    
+    /*
+     注意 第一个参数 表示指针内存中偏移字节数
+     然后 存储一个 Int 类型的数值
+     */
+    
+     //MARK:- 等同于(pointer+stride).storeBytes(of: 6, as: Int.self)
+    
+    pointer.advanced(by: stride).storeBytes(of: 6, as: Int.self)
+    
+    let v = pointer.load(as: Int.self)
+    
+    print("虽然让面advance 指针偏移操作 但是发现pointer 并未改变 每次pointer 还是永远指向 指针首地址 指针偏移后:\(v)")
+    
+   let v2 = pointer.advanced(by: stride).load(as: Int.self)
+    
+    print("通过advance 指针偏移操作  指针偏移后输出-:\(v2)")
+    
+    //MARK: - 原生buffer指针初始化 从原生指针转换为buffer
+    
+    let bufferPointer = UnsafeRawBufferPointer(start: pointer, count: byteCount)
+    
+    for (index, byte) in bufferPointer.enumerated() {
+        print("byte \(index): \(byte)")
+    }
+   
+}
+/*
+ 使用 UnsafeMutableRawPointer.allocate 方法来分配所需的字节数。我们使用了 UnsafeMutableRawPointer，它的名字表明这个指针可以用来读取和存储（改变）原生的字节
+ */
+var strCon = "C指针"
+print("Swift 字符串长度:\(strCon.count)")
+
+let strPP = withUnsafePointer(to: &strCon) { (p:UnsafePointer<String>) -> UnsafePointer<String> in
+    
+    print("String 指针\(p)")
+    
+    
+    return p
+}
+
+print("String 指针\(strPP)")
+
+
+
+let strPP22 = withUnsafePointer(to: &strCon) { (p:UnsafePointer<String>) -> String in
+    
+    print("String 指针\(p)")
+    
+    
+    return "返回任意处理"
+}
+
+//MARK: -从指针转换为String对象
+print("String 指针\(strPP22)")
+
+let oldStr = strPP.pointee
+
+print("从指针转换为String对象:\(oldStr)")
+
+var test = strCon.withCString { (p:UnsafePointer<Int8>) -> Int8 in
+    
+    //MARK: - UnsafeRawPointer只能由其他指针用init方法得到，与UnsafePointer类似，没有allocate静态方法
+    
+    print("输出c的strlen计算模式字符串长度:\(cFuncStrlen(p))")
+    
+    
+    let cV = Int8(cFuncStr(p))
+    
+    print("调用C函数返回值:\(cV)")
+    
+    print("swift指针返回值:\(cV)")
+    
+    let x = p.pointee
+    print("\(x)")
+    
+    
+    // Load the third value in memory
+    
+    //MARK:不带Raw的指针 才可以 Strideable
+    
+    let offsetPointer = p + 2
+    let y = offsetPointer.pointee
+    print("\(y)")
+    
+    
+    return x
+   
 }
 
 print("输出的是第一个字节的值 \(test)")
 
+do {
+    /*
+     先创建原生指针。我们通过将内存绑定(binding)到指定的类型上来创建类型指针。通过对内存的绑定，我们可以通过类型安全的方法来访问它
+     */
+    print("Converting raw pointers to typed pointers")
+    
+    let rawPointer = UnsafeMutableRawPointer.allocate(bytes: byteCount, alignedTo: alignment)
+    defer {
+        rawPointer.deallocate(bytes: byteCount, alignedTo: alignment)
+    }
+    
+    let typedPointer = rawPointer.bindMemory(to: Int.self, capacity: count)
+    
+    typedPointer.initialize(to: 0, count: count)
+    defer {
+        typedPointer.deinitialize(count: count)
+    }
+    
+    typedPointer.pointee = 42
+    typedPointer.advanced(by: 1).pointee = 6
+    
+    print("类型安全的指针\(typedPointer.pointee)")
+    
+    print("类型安全的指针\(typedPointer.advanced(by: 1).pointee)")
+    
+    
+    let bufferPointer = UnsafeBufferPointer(start: typedPointer, count: count)
+    for (index, value) in bufferPointer.enumerated() {
+        print("value \(index): \(value)")
+    }
+}
 
 
+//MARK:- C文件操作2
 
+
+//MARK:- swift 数组 - C指针
+
+var array = [100, 2, 3, 4, 5]
+var arrayPtr = UnsafeMutableBufferPointer<Int>(start: &array, count: array.count)
+// baseAddress 是第一个元素的指针
+var basePtr = arrayPtr.baseAddress as! UnsafeMutablePointer<Int>
+
+print("数组首元素\(basePtr.pointee)")
 
 let voidPtr = UnsafeRawPointer(intPtr)
 

@@ -10,9 +10,9 @@
 #define CFramWork_h
 
 #include <stdio.h>
-void cFuncStr(const char *str);
+int cFuncStr(const char *str);
 void cFuncInt(const int *str);
 void generic_function(int value_type, void* value);
-
+size_t  cFuncStrlen(const char* str);
 
 #endif /* CFramWork_h */
