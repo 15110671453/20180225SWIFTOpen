@@ -72,24 +72,56 @@ let pCommandState = command.withCString { ( p:UnsafePointer<Int8>) -> Int8 in
     
     var state = 0
     
+    //应答结构体数组 指针
     let reply:UnsafeMutablePointer<redisReply> = redisSendCommand(conn, p)
-    
+    //应答结构体数组  值
     let element = reply.pointee
     
+    //应答结构体数组 第一个结构体 指针
     let elePtr:UnsafeMutablePointer = element.element
-    
+    //应答结构体数组 第一个结构体 指针 值
     let vPtr:UnsafeMutablePointer  = elePtr.pointee!
-    
+    //应答结构体数组 第一个结构体  值
     let value1 = vPtr.pointee
+    //应答结构体数组 第一个结构体的 Str指针
     let str1Ptr = value1.str
     
+   
+    //应答结构体数组 第一个结构体的 Str指针 值 但是是字节序  第一个字节的值
+    let strCon1 = str1Ptr?.pointee
     
+    print("key1 只获得了字符串 第一个字节的值:\(String(describing: strCon1))")
+    let strRaw1 = UnsafeMutableRawPointer(str1Ptr)
+    
+    let strData1 = Data.init(bytesNoCopy: strRaw1!, count: value1.len, deallocator: Data.Deallocator.none)
+    
+    let strReal1 = String(data:strData1, encoding: String.Encoding.utf8)!
+    
+    
+    
+    print("redis数据库中key1:\(strReal1)")
 
-    let v2Ptr:UnsafeMutablePointer  = elePtr.pointee!
+    let v2Ptr:UnsafeMutablePointer  = (elePtr + 1).pointee!
     
     let value2 = v2Ptr.pointee
     let str2Ptr = value2.str
     let strCon2 = str2Ptr?.pointee
+    
+    print("key2 只获得了字符串 第一个字节的值:\(String(describing: strCon2))")
+    
+    let strRaw2 = UnsafeMutableRawPointer(str2Ptr)
+    
+    let strData2 = Data.init(bytesNoCopy: strRaw2!, count: value2.len, deallocator: Data.Deallocator.none)
+    
+    let strReal2 = String(data:strData2, encoding: String.Encoding.utf8)!
+    
+    
+    
+    print("redis数据库中key2:\(strReal2)")
+    
+    
+   
+  
     
     return Int8(state)
 }
