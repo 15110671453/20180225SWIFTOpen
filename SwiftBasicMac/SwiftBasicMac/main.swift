@@ -72,11 +72,15 @@ let pCommandState = command.withCString { ( p:UnsafePointer<Int8>) -> Int8 in
     
     var state = 0
     
-    //应答结构体数组 指针
+    //应答结构体 指针
     let reply:UnsafeMutablePointer<redisReply> = redisSendCommand(conn, p)
-    //应答结构体数组  值
+    //应答结构体  值
     let element = reply.pointee
-    
+    /*
+     根据返回的类型 我们知道reply 要让我们解析 结构体中的数组
+     */
+    let type = element.type
+    var  elementsCount = element.elements
     //应答结构体数组 第一个结构体 指针
     let elePtr:UnsafeMutablePointer = element.element
     //应答结构体数组 第一个结构体 指针 值
@@ -86,7 +90,7 @@ let pCommandState = command.withCString { ( p:UnsafePointer<Int8>) -> Int8 in
     //应答结构体数组 第一个结构体的 Str指针
     let str1Ptr = value1.str
     
-   
+    
     //应答结构体数组 第一个结构体的 Str指针 值 但是是字节序  第一个字节的值
     let strCon1 = str1Ptr?.pointee
     
@@ -100,7 +104,7 @@ let pCommandState = command.withCString { ( p:UnsafePointer<Int8>) -> Int8 in
     
     
     print("redis数据库中key1:\(strReal1)")
-
+    
     let v2Ptr:UnsafeMutablePointer  = (elePtr + 1).pointee!
     
     let value2 = v2Ptr.pointee
@@ -118,6 +122,39 @@ let pCommandState = command.withCString { ( p:UnsafePointer<Int8>) -> Int8 in
     
     
     print("redis数据库中key2:\(strReal2)")
+   
+    var index_v_Increace = 0
+    
+    
+    repeat {
+        
+        let v_Ptr:UnsafeMutablePointer  = (elePtr + index_v_Increace).pointee!
+        
+        let value_Ptr = v_Ptr.pointee
+        
+        let str_Ptr = value_Ptr.str
+        
+        let str_Con = str_Ptr?.pointee
+        
+        print("key 只获得了字符串 第一个字节的值:\(String(describing: str_Con))")
+        
+        let str_Raw = UnsafeMutableRawPointer(str_Ptr)
+        
+        let str_Data = Data.init(bytesNoCopy: str_Raw!, count: value_Ptr.len, deallocator: Data.Deallocator.none)
+        
+        let str_Real = String(data:str_Data, encoding: String.Encoding.utf8)!
+        
+        
+        
+        print("redis数据库中key :\(str_Real)")
+        
+        elementsCount = elementsCount - 1
+        
+        index_v_Increace = index_v_Increace + 1
+        
+        
+    }while(elementsCount > 0)
+   
     
     
    
