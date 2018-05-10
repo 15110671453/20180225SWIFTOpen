@@ -4,3 +4,4 @@
 
 #import "CFramWork.h"
 #import "OCFramWork.h"
+#import "hiredis_bridge.h"

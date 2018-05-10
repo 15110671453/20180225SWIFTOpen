@@ -16,6 +16,86 @@
 
 import Foundation
 
+//MARK: c 中 调用swift
+struct CallbackUserData {
+    func sayHello() {
+        print("Hello world!" )
+        
+    }
+}
+let callback : @convention(c) (_ userData:UnsafeMutableRawPointer?) -> Void = {
+    (userData) ->Void in
+    
+     let u = userData?.bindMemory(to: CallbackUserData.self, capacity: 1)
+    /*
+     我们需要手动进行内存管理，一般来说会使用得到的 Unmanaged 对象的 takeUnretainedValue 或者 takeRetainedValue 从中取出需要的 CF 对象，并同时处理引用计数。takeUnretainedValue 将保持原来的引用计数不变，在你明白你没有义务去释放原来的内存时，应该使用这个方法。而如果你需要释放得到的 CF 的对象的内存时，应该使用 takeRetainedValue 来让引用计数加一，然后在使用完后对原来的 Unmanaged 进行手动释放。为了能手动操作 Unmanaged 的引用计数，Unmanaged 中还提供了 retain，release 和 autorelease 这样的 "老朋友" 供我们使用
+     */
+    /*
+     如果这个非托管对象的使用全程，能够保障被封装对象一直存活，我们就可以使用 passUnretained 方法，对象的生命周期还归编译器管理。如果非托管对象使用周期超过了编译器认为的生命周期，比如超出作用域，编译器自动插入 release 的 ARC 语义，那么这个非托管对象就是一个野指针了，此时我们必须手动 retain 这个对象，也就是使用 passRetained 方法。一旦你手动 retain 了一个对象，就不要忘记 release 掉它，方法就是调用非托管对象的 release 方法，或者用 takeRetainedValue 取出封装的对象，并将其管理权交回 ARC。但注意，一定不要对一个用 passUnretained 构造的非托管对象调用 release 或者 takeRetainedValue，这会导致原来的对象被 release 掉，从而引发异常。
+     */
+   
+    print("c回调Swift\(String(describing: userData))")
+    
+    let useR = u?.pointee
+
+    useR?.sayHello()
+    
+}
+
+
+var userData = CallbackUserData()
+
+let reference2 = withUnsafePointer(to: &userData) { (pRe:UnsafePointer<CallbackUserData>) -> UnsafeRawPointer in
+
+    //等同于UnsafePointer<Void>
+    return UnsafeRawPointer(pRe)
+}
+
+print("userData:\(reference2)")
+//MARK:- 在 Swift 中调用包含函数指针参数的 C 函数
+
+set_callback(callback,reference2)
+
+
+//MARK:- redis redis
+let conn:UnsafeMutablePointer<redisContext>  = redisConnect("192.168.3.236",6379)
+
+
+
+print(conn.pointee)
+
+var command = "keys *"
+
+let byteCountRedis = MemoryLayout<redisReply>.stride
+//MARK: - Redis
+let pCommandState = command.withCString { ( p:UnsafePointer<Int8>) -> Int8 in
+    
+    var state = 0
+    
+    let reply:UnsafeMutablePointer<redisReply> = redisSendCommand(conn, p)
+    
+    let element = reply.pointee
+    
+    let elePtr:UnsafeMutablePointer = element.element
+    
+    let vPtr:UnsafeMutablePointer  = elePtr.pointee!
+    
+    let value1 = vPtr.pointee
+    let str1Ptr = value1.str
+    
+    
+
+    let v2Ptr:UnsafeMutablePointer  = elePtr.pointee!
+    
+    let value2 = v2Ptr.pointee
+    let str2Ptr = value2.str
+    let strCon2 = str2Ptr?.pointee
+    
+    return Int8(state)
+}
+
+
+
 
 //MARK:-  文件操作 C
 
@@ -96,8 +176,6 @@ enum Value_Type:Int32 {
  UnsafeMutablePointer<Type> 等同于 C指针 Type* p
  
  */
-
-
 
 
 let ob:POBJ = POBJ()
@@ -263,8 +341,14 @@ let uint64Pointer = UnsafeMutableRawPointer(uint8Pointer)
 var fullInteger = uint64Pointer.pointee          // OK
 var firstByte = uint8Pointer.pointee
 
+//MARK: UnsafeMutableRawPointer 修改内存类型
 
 print("\(fullInteger) C指针 内存类型被改后 旧的引用指针操作为:\(firstByte)")
+let uint64PointerOff = uint64Pointer + 1
+
+let uint8PointerOff = uint8Pointer + 1
+
+print("\(uint64PointerOff.pointee) C指针 内存类型被改后 旧的引用指针操作为:\(uint8PointerOff.pointee)")
 
 let count = 2
 

@@ -10,8 +10,10 @@
 #define hiredis_bridge_h
 
 #include <stdio.h>
+#include "hiredis.h"
 
 
+redisReply * redisSendCommand(redisContext*c,const char* format);
 
 
 

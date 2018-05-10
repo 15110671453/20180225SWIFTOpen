@@ -29,3 +29,8 @@ void cFuncInt(const int *str)
     printf("输出c数组 %lx",str);
      printf("输出c数组 首元素 %lx \n",*str);
 }
+void set_callback(void (*functionPtr)(void*),void const *userData)
+{
+
+    functionPtr(userData);
+}

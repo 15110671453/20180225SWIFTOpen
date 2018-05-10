@@ -14,8 +14,8 @@
 		EC1C5110205623020033237E /* DicOBJ.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC1C510F205623020033237E /* DicOBJ.swift */; };
 		EC1C5112205626600033237E /* SetOBJ.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC1C5111205626600033237E /* SetOBJ.swift */; };
 		EC1C511420562EEB0033237E /* FuncOBJ.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC1C511320562EEB0033237E /* FuncOBJ.swift */; };
-		EC33990120A3D3B50038360A /* hiredis-bridge.c in Sources */ = {isa = PBXBuildFile; fileRef = EC3398FF20A3D3B50038360A /* hiredis-bridge.c */; };
 		EC33990920A3D5950038360A /* libhiredis.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EC33990420A3D5940038360A /* libhiredis.a */; };
+		EC33990E20A409E80038360A /* hiredis_bridge.c in Sources */ = {isa = PBXBuildFile; fileRef = EC33990C20A409E80038360A /* hiredis_bridge.c */; };
 		EC5CCC7220523C9E00AFBD98 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5CCC7120523C9E00AFBD98 /* main.swift */; };
 		EC5CCC7920523CD200AFBD98 /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5CCC7820523CD200AFBD98 /* Test.swift */; };
 		EC5CCC7B20523E4600AFBD98 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5CCC7A20523E4600AFBD98 /* Person.swift */; };
@@ -48,12 +48,13 @@
 		EC1C510F205623020033237E /* DicOBJ.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DicOBJ.swift; sourceTree = "<group>"; };
 		EC1C5111205626600033237E /* SetOBJ.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetOBJ.swift; sourceTree = "<group>"; };
 		EC1C511320562EEB0033237E /* FuncOBJ.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FuncOBJ.swift; sourceTree = "<group>"; };
-		EC3398FF20A3D3B50038360A /* hiredis-bridge.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = "hiredis-bridge.c"; sourceTree = "<group>"; };
-		EC33990020A3D3B50038360A /* hiredis-bridge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "hiredis-bridge.h"; sourceTree = "<group>"; };
 		EC33990320A3D5940038360A /* hiredis.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = hiredis.h; sourceTree = "<group>"; };
 		EC33990420A3D5940038360A /* libhiredis.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libhiredis.a; sourceTree = "<group>"; };
 		EC33990520A3D5940038360A /* read.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = read.h; sourceTree = "<group>"; };
 		EC33990820A3D5940038360A /* sds.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sds.h; sourceTree = "<group>"; };
+		EC33990B20A409E80038360A /* CMakeList.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CMakeList.txt; sourceTree = "<group>"; };
+		EC33990C20A409E80038360A /* hiredis_bridge.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = hiredis_bridge.c; sourceTree = "<group>"; };
+		EC33990D20A409E80038360A /* hiredis_bridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = hiredis_bridge.h; sourceTree = "<group>"; };
 		EC5CCC6E20523C9E00AFBD98 /* SwiftBasicMac */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = SwiftBasicMac; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC5CCC7120523C9E00AFBD98 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		EC5CCC7820523CD200AFBD98 /* Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Test.swift; sourceTree = "<group>"; };
@@ -93,9 +94,21 @@
 			path = redis;
 			sourceTree = "<group>";
 		};
+		EC33990A20A409E80038360A /* hiredis_bridge */ = {
+			isa = PBXGroup;
+			children = (
+				EC33990B20A409E80038360A /* CMakeList.txt */,
+				EC33990C20A409E80038360A /* hiredis_bridge.c */,
+				EC33990D20A409E80038360A /* hiredis_bridge.h */,
+			);
+			name = hiredis_bridge;
+			path = SwiftBasicMac/hiredis_bridge;
+			sourceTree = "<group>";
+		};
 		EC5CCC6520523C9E00AFBD98 = {
 			isa = PBXGroup;
 			children = (
+				EC33990A20A409E80038360A /* hiredis_bridge */,
 				EC5CCC7020523C9E00AFBD98 /* SwiftBasicMac */,
 				EC5CCC6F20523C9E00AFBD98 /* Products */,
 			);
@@ -133,8 +146,6 @@
 				ECF3B6BE20A2C31C00DB7571 /* SwiftBasicMac-Bridging-Header.h */,
 				ECF3B6C220A2C34700DB7571 /* OCFramWork.h */,
 				ECF3B6C320A2C34700DB7571 /* OCFramWork.m */,
-				EC3398FF20A3D3B50038360A /* hiredis-bridge.c */,
-				EC33990020A3D3B50038360A /* hiredis-bridge.h */,
 			);
 			path = SwiftBasicMac;
 			sourceTree = "<group>";
@@ -223,7 +234,7 @@
 				ECF3B6C620A2D4F200DB7571 /* CopyArrayVSDictionary.swift in Sources */,
 				EC5CCC7220523C9E00AFBD98 /* main.swift in Sources */,
 				EC5CCC7920523CD200AFBD98 /* Test.swift in Sources */,
-				EC33990120A3D3B50038360A /* hiredis-bridge.c in Sources */,
+				EC33990E20A409E80038360A /* hiredis_bridge.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
