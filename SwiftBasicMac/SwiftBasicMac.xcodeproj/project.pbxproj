@@ -19,6 +19,24 @@
 		EC5CCC7220523C9E00AFBD98 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5CCC7120523C9E00AFBD98 /* main.swift */; };
 		EC5CCC7920523CD200AFBD98 /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5CCC7820523CD200AFBD98 /* Test.swift */; };
 		EC5CCC7B20523E4600AFBD98 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5CCC7A20523E4600AFBD98 /* Person.swift */; };
+		EC84B08920A59CCB0047C118 /* Bytes.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC84B06C20A59CCB0047C118 /* Bytes.swift */; };
+		EC84B08A20A59CCB0047C118 /* Dir.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC84B06D20A59CCB0047C118 /* Dir.swift */; };
+		EC84B08B20A59CCB0047C118 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC84B06E20A59CCB0047C118 /* File.swift */; };
+		EC84B08C20A59CCB0047C118 /* JSONConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC84B06F20A59CCB0047C118 /* JSONConvertible.swift */; };
+		EC84B08D20A59CCB0047C118 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC84B07020A59CCB0047C118 /* Log.swift */; };
+		EC84B08E20A59CCB0047C118 /* PerfectError.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC84B07120A59CCB0047C118 /* PerfectError.swift */; };
+		EC84B08F20A59CCB0047C118 /* PerfectServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC84B07220A59CCB0047C118 /* PerfectServer.swift */; };
+		EC84B09020A59CCB0047C118 /* SysProcess.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC84B07320A59CCB0047C118 /* SysProcess.swift */; };
+		EC84B09120A59CCB0047C118 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC84B07420A59CCB0047C118 /* Utilities.swift */; };
+		EC84B09220A59CCB0047C118 /* Net.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC84B07620A59CCB0047C118 /* Net.swift */; };
+		EC84B09320A59CCB0047C118 /* NetAddress.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC84B07720A59CCB0047C118 /* NetAddress.swift */; };
+		EC84B09420A59CCB0047C118 /* NetEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC84B07820A59CCB0047C118 /* NetEvent.swift */; };
+		EC84B09520A59CCB0047C118 /* NetNamedPipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC84B07920A59CCB0047C118 /* NetNamedPipe.swift */; };
+		EC84B09620A59CCB0047C118 /* NetTCP.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC84B07A20A59CCB0047C118 /* NetTCP.swift */; };
+		EC84B09820A59CCB0047C118 /* NetUDP.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC84B07C20A59CCB0047C118 /* NetUDP.swift */; };
+		EC84B0A020A59CCB0047C118 /* Promise.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC84B08620A59CCB0047C118 /* Promise.swift */; };
+		EC84B0A120A59CCB0047C118 /* Threading.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC84B08720A59CCB0047C118 /* Threading.swift */; };
+		EC84B0A220A59CCB0047C118 /* ThreadQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC84B08820A59CCB0047C118 /* ThreadQueue.swift */; };
 		ECF3B6BD20A2B34E00DB7571 /* POBJ.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF3B6BC20A2B34E00DB7571 /* POBJ.swift */; };
 		ECF3B6C120A2C31D00DB7571 /* CFramWork.c in Sources */ = {isa = PBXBuildFile; fileRef = ECF3B6BF20A2C31D00DB7571 /* CFramWork.c */; };
 		ECF3B6C420A2C34700DB7571 /* OCFramWork.m in Sources */ = {isa = PBXBuildFile; fileRef = ECF3B6C320A2C34700DB7571 /* OCFramWork.m */; };
@@ -59,6 +77,24 @@
 		EC5CCC7120523C9E00AFBD98 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		EC5CCC7820523CD200AFBD98 /* Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Test.swift; sourceTree = "<group>"; };
 		EC5CCC7A20523E4600AFBD98 /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
+		EC84B06C20A59CCB0047C118 /* Bytes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bytes.swift; sourceTree = "<group>"; };
+		EC84B06D20A59CCB0047C118 /* Dir.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dir.swift; sourceTree = "<group>"; };
+		EC84B06E20A59CCB0047C118 /* File.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
+		EC84B06F20A59CCB0047C118 /* JSONConvertible.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONConvertible.swift; sourceTree = "<group>"; };
+		EC84B07020A59CCB0047C118 /* Log.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
+		EC84B07120A59CCB0047C118 /* PerfectError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PerfectError.swift; sourceTree = "<group>"; };
+		EC84B07220A59CCB0047C118 /* PerfectServer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PerfectServer.swift; sourceTree = "<group>"; };
+		EC84B07320A59CCB0047C118 /* SysProcess.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SysProcess.swift; sourceTree = "<group>"; };
+		EC84B07420A59CCB0047C118 /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
+		EC84B07620A59CCB0047C118 /* Net.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Net.swift; sourceTree = "<group>"; };
+		EC84B07720A59CCB0047C118 /* NetAddress.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetAddress.swift; sourceTree = "<group>"; };
+		EC84B07820A59CCB0047C118 /* NetEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetEvent.swift; sourceTree = "<group>"; };
+		EC84B07920A59CCB0047C118 /* NetNamedPipe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetNamedPipe.swift; sourceTree = "<group>"; };
+		EC84B07A20A59CCB0047C118 /* NetTCP.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetTCP.swift; sourceTree = "<group>"; };
+		EC84B07C20A59CCB0047C118 /* NetUDP.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetUDP.swift; sourceTree = "<group>"; };
+		EC84B08620A59CCB0047C118 /* Promise.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Promise.swift; sourceTree = "<group>"; };
+		EC84B08720A59CCB0047C118 /* Threading.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Threading.swift; sourceTree = "<group>"; };
+		EC84B08820A59CCB0047C118 /* ThreadQueue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThreadQueue.swift; sourceTree = "<group>"; };
 		ECF3B6BC20A2B34E00DB7571 /* POBJ.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = POBJ.swift; sourceTree = "<group>"; };
 		ECF3B6BE20A2C31C00DB7571 /* SwiftBasicMac-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SwiftBasicMac-Bridging-Header.h"; sourceTree = "<group>"; };
 		ECF3B6BF20A2C31D00DB7571 /* CFramWork.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = CFramWork.c; sourceTree = "<group>"; };
@@ -108,6 +144,7 @@
 		EC5CCC6520523C9E00AFBD98 = {
 			isa = PBXGroup;
 			children = (
+				EC84B06A20A59CCB0047C118 /* ThirdParty */,
 				EC33990A20A409E80038360A /* hiredis_bridge */,
 				EC5CCC7020523C9E00AFBD98 /* SwiftBasicMac */,
 				EC5CCC6F20523C9E00AFBD98 /* Products */,
@@ -148,6 +185,56 @@
 				ECF3B6C320A2C34700DB7571 /* OCFramWork.m */,
 			);
 			path = SwiftBasicMac;
+			sourceTree = "<group>";
+		};
+		EC84B06A20A59CCB0047C118 /* ThirdParty */ = {
+			isa = PBXGroup;
+			children = (
+				EC84B06B20A59CCB0047C118 /* JSON */,
+				EC84B07520A59CCB0047C118 /* RunLoopEvent */,
+				EC84B08520A59CCB0047C118 /* Thread */,
+			);
+			name = ThirdParty;
+			path = SwiftBasicMac/ThirdParty;
+			sourceTree = "<group>";
+		};
+		EC84B06B20A59CCB0047C118 /* JSON */ = {
+			isa = PBXGroup;
+			children = (
+				EC84B06C20A59CCB0047C118 /* Bytes.swift */,
+				EC84B06D20A59CCB0047C118 /* Dir.swift */,
+				EC84B06E20A59CCB0047C118 /* File.swift */,
+				EC84B06F20A59CCB0047C118 /* JSONConvertible.swift */,
+				EC84B07020A59CCB0047C118 /* Log.swift */,
+				EC84B07120A59CCB0047C118 /* PerfectError.swift */,
+				EC84B07220A59CCB0047C118 /* PerfectServer.swift */,
+				EC84B07320A59CCB0047C118 /* SysProcess.swift */,
+				EC84B07420A59CCB0047C118 /* Utilities.swift */,
+			);
+			path = JSON;
+			sourceTree = "<group>";
+		};
+		EC84B07520A59CCB0047C118 /* RunLoopEvent */ = {
+			isa = PBXGroup;
+			children = (
+				EC84B07620A59CCB0047C118 /* Net.swift */,
+				EC84B07720A59CCB0047C118 /* NetAddress.swift */,
+				EC84B07820A59CCB0047C118 /* NetEvent.swift */,
+				EC84B07920A59CCB0047C118 /* NetNamedPipe.swift */,
+				EC84B07A20A59CCB0047C118 /* NetTCP.swift */,
+				EC84B07C20A59CCB0047C118 /* NetUDP.swift */,
+			);
+			path = RunLoopEvent;
+			sourceTree = "<group>";
+		};
+		EC84B08520A59CCB0047C118 /* Thread */ = {
+			isa = PBXGroup;
+			children = (
+				EC84B08620A59CCB0047C118 /* Promise.swift */,
+				EC84B08720A59CCB0047C118 /* Threading.swift */,
+				EC84B08820A59CCB0047C118 /* ThreadQueue.swift */,
+			);
+			path = Thread;
 			sourceTree = "<group>";
 		};
 		ECF3B6BB20A2B34200DB7571 /* POBJ */ = {
@@ -218,23 +305,41 @@
 			buildActionMask = 2147483647;
 			files = (
 				ECF3B6C120A2C31D00DB7571 /* CFramWork.c in Sources */,
+				EC84B08D20A59CCB0047C118 /* Log.swift in Sources */,
+				EC84B08920A59CCB0047C118 /* Bytes.swift in Sources */,
 				EC5CCC7B20523E4600AFBD98 /* Person.swift in Sources */,
+				EC84B08A20A59CCB0047C118 /* Dir.swift in Sources */,
+				EC84B09820A59CCB0047C118 /* NetUDP.swift in Sources */,
 				EC1C511420562EEB0033237E /* FuncOBJ.swift in Sources */,
 				ECF3B6CC20A2E59500DB7571 /* Stack.swift in Sources */,
+				EC84B09320A59CCB0047C118 /* NetAddress.swift in Sources */,
+				EC84B09420A59CCB0047C118 /* NetEvent.swift in Sources */,
 				EC1C510A205614E70033237E /* Guard.swift in Sources */,
+				EC84B08E20A59CCB0047C118 /* PerfectError.swift in Sources */,
 				EC1C5110205623020033237E /* DicOBJ.swift in Sources */,
 				ECF3B6C420A2C34700DB7571 /* OCFramWork.m in Sources */,
 				EC1C510E205621730033237E /* ArrayOBJ.swift in Sources */,
 				ECF3B6C820A2E1F700DB7571 /* Container.swift in Sources */,
 				ECF3B6BD20A2B34E00DB7571 /* POBJ.swift in Sources */,
 				EC1C5112205626600033237E /* SetOBJ.swift in Sources */,
+				EC84B0A020A59CCB0047C118 /* Promise.swift in Sources */,
+				EC84B09120A59CCB0047C118 /* Utilities.swift in Sources */,
+				EC84B08F20A59CCB0047C118 /* PerfectServer.swift in Sources */,
 				ECF3B6CA20A2E37900DB7571 /* IntStack.swift in Sources */,
 				EC1C510820560FF50033237E /* OptionalOBJ.swift in Sources */,
+				EC84B09620A59CCB0047C118 /* NetTCP.swift in Sources */,
+				EC84B0A120A59CCB0047C118 /* Threading.swift in Sources */,
+				EC84B09520A59CCB0047C118 /* NetNamedPipe.swift in Sources */,
 				EC1C510C20561EC00033237E /* Loop.swift in Sources */,
+				EC84B08B20A59CCB0047C118 /* File.swift in Sources */,
 				ECF3B6C620A2D4F200DB7571 /* CopyArrayVSDictionary.swift in Sources */,
+				EC84B09020A59CCB0047C118 /* SysProcess.swift in Sources */,
 				EC5CCC7220523C9E00AFBD98 /* main.swift in Sources */,
 				EC5CCC7920523CD200AFBD98 /* Test.swift in Sources */,
 				EC33990E20A409E80038360A /* hiredis_bridge.c in Sources */,
+				EC84B0A220A59CCB0047C118 /* ThreadQueue.swift in Sources */,
+				EC84B08C20A59CCB0047C118 /* JSONConvertible.swift in Sources */,
+				EC84B09220A59CCB0047C118 /* Net.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
