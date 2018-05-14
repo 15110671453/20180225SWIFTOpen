@@ -56,13 +56,79 @@ let globalQueue = DispatchQueue.global()
 
     //使用全局队列，开启异步任务。
     //use the global queue , run in asynchronous
-    globalQueue.async {
+globalQueue.async {
         print("I am No., current thread name is:\(Thread.current)")
-      CFRunLoopGetCurrent()
+       
+
         
         
+        
+        
+        
+        //MARK:RunLoopConfig2
+        
+    let runLoop = CFRunLoopGetCurrent()
+        
+        let firedate = CFAbsoluteTimeGetCurrent()
+        
+        let distantdate = NSDate.distantFuture
+    
+       // let doubledistant = CFDateGetTimeIntervalSinceDate(CFDateCreate(kCFAllocatorDefault, firedate), CFDateCreate(kCFAllocatorDefault, kCFAbsoluteTimeIntervalSince1904))
+    
+    /*
+     以上这个基本设置为很遥远的时间
+     */
+    
+        let doubledistant = 5.0
+    
+        var info = "maintimer"
+        
+        var timerContext:UnsafeMutablePointer<CFRunLoopTimerContext>? = nil
+        
+        var timerCon:CFRunLoopTimerContext? = nil
+        
+        withUnsafePointer(to: &info, { (pinfo:UnsafePointer) -> String in
+            
+            timerCon = CFRunLoopTimerContext.init(version: 0, info:UnsafeMutableRawPointer(mutating: pinfo), retain: nil, release: nil, copyDescription: nil)
+            
+            return ""
+        })
+        
+        withUnsafePointer(to: &timerCon, { (p:UnsafePointer) -> String in
+           
+            let praw = UnsafeMutableRawPointer(mutating: p)
+            
+            timerContext = praw.bindMemory(to: CFRunLoopTimerContext.self, capacity: 1)
+            
+            return ""
+        })
+        
+        let timer  = CFRunLoopTimerCreate(kCFAllocatorDefault, firedate,doubledistant, 0, 0, { (timer:CFRunLoopTimer?, p:UnsafeMutableRawPointer?) -> Void in
+            
+            print("test global")
+            
+            } , timerContext)
+        
+        CFRunLoopAddTimer(runLoop, timer,CFRunLoopMode.defaultMode )
+    var loopCount = 10
+    
+    repeat {
+        
+        loopCount = loopCount - 1
+        
+    CFRunLoopRunInMode(CFRunLoopMode.defaultMode, 10, true)
+        
+        print("RunLoop global BackEnd 第\(loopCount)次")
+        
+        
+    }while(loopCount > 0)
+    
+            
+      
+    
         
     }
+
 
 /*
  Run loops are part of the fundamental infrastructure associated with threads. A run loop is an event processing loop that you use to schedule work and coordinate the receipt of incoming events. The purpose of a run loop is to keep your thread busy when there is work to do and put your thread to sleep when there is none.
@@ -71,7 +137,7 @@ let globalQueue = DispatchQueue.global()
  
  The following sections provide more information about run loops and how you configure them for your application. For additional information about run loop objects, see NSRunLoop Class Reference and CFRunLoop Reference.
  
-https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/Multithreading/RunLoopManagement/RunLoopManagement.html
+ https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/Multithreading/RunLoopManagement/RunLoopManagement.html
  
  
  A run loop receives events from two different types of sources. Input sources deliver asynchronous events, usually messages from another thread or from a different application. Timer sources deliver synchronous events, occurring at a scheduled time or repeating interval. Both types of source use an application-specific handler routine to process the event when it arrives.
@@ -93,18 +159,18 @@ struct CallbackUserData {
 let callback : @convention(c) (_ userData:UnsafeMutableRawPointer?) -> Void = {
     (userData) ->Void in
     
-     let u = userData?.bindMemory(to: CallbackUserData.self, capacity: 1)
+    let u = userData?.bindMemory(to: CallbackUserData.self, capacity: 1)
     /*
      我们需要手动进行内存管理，一般来说会使用得到的 Unmanaged 对象的 takeUnretainedValue 或者 takeRetainedValue 从中取出需要的 CF 对象，并同时处理引用计数。takeUnretainedValue 将保持原来的引用计数不变，在你明白你没有义务去释放原来的内存时，应该使用这个方法。而如果你需要释放得到的 CF 的对象的内存时，应该使用 takeRetainedValue 来让引用计数加一，然后在使用完后对原来的 Unmanaged 进行手动释放。为了能手动操作 Unmanaged 的引用计数，Unmanaged 中还提供了 retain，release 和 autorelease 这样的 "老朋友" 供我们使用
      */
     /*
      如果这个非托管对象的使用全程，能够保障被封装对象一直存活，我们就可以使用 passUnretained 方法，对象的生命周期还归编译器管理。如果非托管对象使用周期超过了编译器认为的生命周期，比如超出作用域，编译器自动插入 release 的 ARC 语义，那么这个非托管对象就是一个野指针了，此时我们必须手动 retain 这个对象，也就是使用 passRetained 方法。一旦你手动 retain 了一个对象，就不要忘记 release 掉它，方法就是调用非托管对象的 release 方法，或者用 takeRetainedValue 取出封装的对象，并将其管理权交回 ARC。但注意，一定不要对一个用 passUnretained 构造的非托管对象调用 release 或者 takeRetainedValue，这会导致原来的对象被 release 掉，从而引发异常。
      */
-   
+    
     print("c回调Swift\(String(describing: userData))")
     
     let useR = u?.pointee
-
+    
     useR?.sayHello()
     
 }
@@ -113,7 +179,7 @@ let callback : @convention(c) (_ userData:UnsafeMutableRawPointer?) -> Void = {
 var userData = CallbackUserData()
 
 let reference2 = withUnsafePointer(to: &userData) { (pRe:UnsafePointer<CallbackUserData>) -> UnsafeRawPointer in
-
+    
     //等同于UnsafePointer<Void>
     return UnsafeRawPointer(pRe)
 }
@@ -189,7 +255,7 @@ let pCommandState = command.withCString { ( p:UnsafePointer<Int8>) -> Int8 in
     
     
     print("redis数据库中key2:\(strReal2)")
-   
+    
     var index_v_Increace = 0
     
     
@@ -221,11 +287,11 @@ let pCommandState = command.withCString { ( p:UnsafePointer<Int8>) -> Int8 in
         
         
     }while(elementsCount > 0)
-   
     
     
-   
-  
+    
+    
+    
     
     return Int8(state)
 }
@@ -260,7 +326,7 @@ struct Function_Data {
     var func1Ptr = 0
     var func2Ptr = 0
     static var count = 0
-   // class var count2 = 0
+    // class var count2 = 0
     /*
      Class properties are only allowed within classes; use 'static' to declare a static property
      */
@@ -340,7 +406,7 @@ for value in inOBJStack.items
 //还需要遵守 Sequeces 协议
 for (index,value) in inOBJStack.items.enumerated()
 {
-   print("\(inOBJStack[index])")
+    print("\(inOBJStack[index])")
 }
 
 var stackM:Stack<String> = Stack<String>()
@@ -407,7 +473,7 @@ print("Swift 字符串 到 c 字符串指针")
  
  */
 
- /*
+/*
  被UnsafeMutablePointe引用的内存有三种状态：
  
  1. Not Allocated
@@ -432,7 +498,7 @@ uint8Pointer.initialize(from: [39, 77, 111, 111, 102, 33, 39, 0])
  */
 //MARK:- C指针内存类型临时转换1
 let len = uint8Pointer.withMemoryRebound(to: Int8.self, capacity: 8) { (p:UnsafeMutablePointer<Int8>) ->  Int8 in
-  
+    
     
     
     return Int8(cFuncStrlen(p))
@@ -464,7 +530,7 @@ print("c 获取 字符串长度 \(len)")
  Generic<T> pointer are typed
  
  
-*/
+ */
 
 //MARK:- C指针内存类型永久转换2
 //MARK:- UnsafeMutableRawPointer2
@@ -522,7 +588,7 @@ do {
         pointer.deallocate(bytes: byteCount, alignedTo: alignment)
     }
     
-   
+    
     pointer.storeBytes(of: 42, as: Int.self)
     
     /*
@@ -530,7 +596,7 @@ do {
      然后 存储一个 Int 类型的数值
      */
     
-     //MARK:- 等同于(pointer+stride).storeBytes(of: 6, as: Int.self)
+    //MARK:- 等同于(pointer+stride).storeBytes(of: 6, as: Int.self)
     
     pointer.advanced(by: stride).storeBytes(of: 6, as: Int.self)
     
@@ -538,7 +604,7 @@ do {
     
     print("虽然让面advance 指针偏移操作 但是发现pointer 并未改变 每次pointer 还是永远指向 指针首地址 指针偏移后:\(v)")
     
-   let v2 = pointer.advanced(by: stride).load(as: Int.self)
+    let v2 = pointer.advanced(by: stride).load(as: Int.self)
     
     print("通过advance 指针偏移操作  指针偏移后输出-:\(v2)")
     
@@ -549,7 +615,7 @@ do {
     for (index, byte) in bufferPointer.enumerated() {
         print("byte \(index): \(byte)")
     }
-   
+    
 }
 /*
  使用 UnsafeMutableRawPointer.allocate 方法来分配所需的字节数。我们使用了 UnsafeMutableRawPointer，它的名字表明这个指针可以用来读取和存储（改变）原生的字节
@@ -611,7 +677,7 @@ var test = strCon.withCString { (p:UnsafePointer<Int8>) -> Int8 in
     
     
     return x
-   
+    
 }
 
 print("输出的是第一个字节的值 \(test)")
@@ -783,3 +849,54 @@ print("长方形面积4:\(fB.rectangleArea4(width: 320, 480))")
 
 
 print("长方形面积5:\(fB.rectangleArea5(320, 480))")
+
+
+
+
+//MARK:RunLoopConfig
+let runLoop = CFRunLoopGetCurrent()
+
+let firedate = CFAbsoluteTimeGetCurrent()
+
+let distantdate = NSDate.distantFuture
+
+let doubledistant = CFDateGetTimeIntervalSinceDate(CFDateCreate(kCFAllocatorDefault, firedate), CFDateCreate(kCFAllocatorDefault, kCFAbsoluteTimeIntervalSince1970))
+
+var info = "main"
+
+var timerContext:UnsafeMutablePointer<CFRunLoopTimerContext>? = nil
+
+var timerCon:CFRunLoopTimerContext? = nil
+
+withUnsafePointer(to: &info, { (pinfo:UnsafePointer) -> String in
+    
+    timerCon = CFRunLoopTimerContext.init(version: 0, info:UnsafeMutableRawPointer(mutating: pinfo), retain: nil, release: nil, copyDescription: nil)
+    
+    return ""
+})
+
+withUnsafePointer(to: &timerCon, { (p:UnsafePointer) -> String in
+    
+    let praw = UnsafeMutableRawPointer(mutating: p)
+    
+    timerContext = praw.bindMemory(to: CFRunLoopTimerContext.self, capacity: 1)
+    
+    return ""
+})
+
+let timer  = CFRunLoopTimerCreate(kCFAllocatorDefault, firedate,doubledistant, 0, 0, { (timer:CFRunLoopTimer?, p:UnsafeMutableRawPointer?) -> Void in
+    
+    print("test main")
+    
+} , timerContext)
+
+CFRunLoopTimerSetNextFireDate(timer, doubledistant)
+
+let repeatState = CFRunLoopTimerDoesRepeat(timer)
+
+CFRunLoopAddTimer(runLoop, timer,CFRunLoopMode.defaultMode )
+
+
+CFRunLoopRun()
+
+print("RunLoop main BackEnd")
