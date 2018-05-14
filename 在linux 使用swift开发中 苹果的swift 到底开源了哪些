@@ -37,7 +37,41 @@ swift 在linux ubuntu 下的 编译链
 
 https://swift.org/compiler-stdlib/
 
+Compiler Architecture
+As a whole, the Swift compiler is principally responsible for translating Swift source code into efficient, executable machine code. However, the Swift compiler front-end also supports a number of other tools, including IDE integration with syntax coloring, code completion, and other conveniences. This document provides a high-level description of the major components of the Swift compiler:
 
+Parsing: The parser is a simple, recursive-descent parser (implemented in lib/Parse) with an integrated, hand-coded lexer. The parser is responsible for generating an Abstract Syntax Tree (AST) without any semantic or type information, and emit warnings or errors for grammatical problems with the input source.
+
+Semantic analysis: Semantic analysis (implemented in lib/Sema) is responsible for taking the parsed AST and transforming it into a well-formed, fully-type-checked form of the AST, emitting warnings or errors for semantic problems in the source code. Semantic analysis includes type inference and, on success, indicates that it is safe to generate code from the resulting, type-checked AST.
+
+Clang importer: The Clang importer (implemented in lib/ClangImporter) imports Clang modules and maps the C or Objective-C APIs they export into their corresponding Swift APIs. The resulting imported ASTs can be referred to by semantic analysis.
+
+SIL generation: The Swift Intermediate Language (SIL) is a high-level, Swift-specific intermediate language suitable for further analysis and optimization of Swift code. The SIL generation phase (implemented in lib/SILGen) lowers the type-checked AST into so-called “raw” SIL. The design of SIL is described in docs/SIL.rst.
+
+SIL guaranteed transformations: The SIL guaranteed transformations (implemented in lib/SILOptimizer/Mandatory) perform additional dataflow diagnostics that affect the correctness of a program (such as a use of uninitialized variables). The end result of these transformations is “canonical” SIL.
+
+SIL Optimizations: The SIL optimizations (implemented in lib/Analysis, lib/ARC, lib/LoopTransforms, and lib/Transforms) perform additional high-level, Swift-specific optimizations to the program, including (for example) Automatic Reference Counting optimizations, devirtualization, and generic specialization.
+
+LLVM IR Generation: IR generation (implemented in lib/IRGen) lowers SIL to LLVM IR, at which point LLVM can continue to optimize it and generate machine code.
+
+Standard Library Design
+The Swift standard library encompasses a number of data types, protocols and functions, including fundamental data types (e.g., Int, Double), collections (e.g., Array, Dictionary) along with the protocols that describe them and algorithms that operate on them, characters and strings, and low-level primitives (e.g., UnsafeMutablePointer). The implementation of the standard library resides in the stdlib/public subdirectory within the Swift repository, which is further subdivided into:
+
+Standard library core: The core of the standard library (implemented in stdlib/public/core), including the definitions of all of the data types, protocols, functions, etc.
+
+Runtime: The language support runtime (implemented in stdlib/public/runtime), which is layered between the compiler and the core standard library. It is responsible for implementing many of the dynamic features of the language, such as casting (e.g., for the as! and as? operators), type metadata (to support generics and reflection), and memory management (object allocation, reference counting, etc.). Unlike higher-level libraries, the runtime is written mostly in C++ or (where needed for interoperability) Objective-C.
+
+SDK Overlays: Specific to Apple platforms, the SDK overlays (implemented in stdlib/public/SDK) provide Swift-specific additions and modifications to existing Objective-C frameworks to improve their mapping into Swift. In particular, the Foundation overlay provides additional support for interoperability with Objective-C code.
+
+The Swift standard library is written in Swift, but because it is the lowest-level Swift code in the stack—responsible for implementing the core data types on which other Swift code is built—it is a bit different from normal Swift code. Some of the differences include:
+
+Access to compiler builtins: The Builtin module, which is only generally accessible to the standard library, provides compiler builtin functions (e.g., to directly create SIL instructions) and data types (e.g., “raw” pointers, primitive LLVM integer types) needed to implement the data types that are fundamental to programming in Swift.
+
+Visibility is often managed by convention: Standard library declarations often need to have greater visibility than one would generally like, due to the way in which the standard library is compiled and optimized. For example, private modifiers are never used. More importantly, it is common to need to make something public even when it is not intended as part of the public interface. In such cases, one should use a leading underscore to indicate that the public API is meant to be private. The policy for access control in the standard library is documented in docs/AccessControlInStdlib.rst.
+
+Repetitive code uses gyb: gyb is a simple tool for generating repetitive code from a template that is used often in the standard library. For example, it is used to create the definitions of the various sized integer types (Int8, Int16, Int32, Int64, etc.) from a single source.
+
+Testing is tightly coupled with the compiler: The standard library and the compiler evolve together and are tightly coupled. Changes in core data types (e.g., Array or Int) can require compiler-side changes, and vice-versa, so the standard library test suite is stored within the same directory structure as the compiler, in test/stdlib and validation-test/stdlib.
 
 
 
