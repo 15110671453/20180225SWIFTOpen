@@ -19,6 +19,11 @@
 		EC5CCC7220523C9E00AFBD98 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5CCC7120523C9E00AFBD98 /* main.swift */; };
 		EC5CCC7920523CD200AFBD98 /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5CCC7820523CD200AFBD98 /* Test.swift */; };
 		EC5CCC7B20523E4600AFBD98 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5CCC7A20523E4600AFBD98 /* Person.swift */; };
+		EC6E1EA820A9684E0061D0DC /* Redis_Handler.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC6E1EA720A9684E0061D0DC /* Redis_Handler.swift */; };
+		EC6E1EAA20A968750061D0DC /* Basic_SWF.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC6E1EA920A968750061D0DC /* Basic_SWF.swift */; };
+		EC6E1EAC20A969DD0061D0DC /* RunLoop_SWF.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC6E1EAB20A969DD0061D0DC /* RunLoop_SWF.swift */; };
+		EC6E1EAE20A96A130061D0DC /* CPointer_SWF.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC6E1EAD20A96A130061D0DC /* CPointer_SWF.swift */; };
+		EC6E1EB020A96B850061D0DC /* FanXing_SWF.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC6E1EAF20A96B850061D0DC /* FanXing_SWF.swift */; };
 		EC84B08920A59CCB0047C118 /* Bytes.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC84B06C20A59CCB0047C118 /* Bytes.swift */; };
 		EC84B08A20A59CCB0047C118 /* Dir.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC84B06D20A59CCB0047C118 /* Dir.swift */; };
 		EC84B08B20A59CCB0047C118 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC84B06E20A59CCB0047C118 /* File.swift */; };
@@ -77,6 +82,11 @@
 		EC5CCC7120523C9E00AFBD98 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		EC5CCC7820523CD200AFBD98 /* Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Test.swift; sourceTree = "<group>"; };
 		EC5CCC7A20523E4600AFBD98 /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
+		EC6E1EA720A9684E0061D0DC /* Redis_Handler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Redis_Handler.swift; sourceTree = "<group>"; };
+		EC6E1EA920A968750061D0DC /* Basic_SWF.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Basic_SWF.swift; sourceTree = "<group>"; };
+		EC6E1EAB20A969DD0061D0DC /* RunLoop_SWF.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunLoop_SWF.swift; sourceTree = "<group>"; };
+		EC6E1EAD20A96A130061D0DC /* CPointer_SWF.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPointer_SWF.swift; sourceTree = "<group>"; };
+		EC6E1EAF20A96B850061D0DC /* FanXing_SWF.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FanXing_SWF.swift; sourceTree = "<group>"; };
 		EC84B06C20A59CCB0047C118 /* Bytes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bytes.swift; sourceTree = "<group>"; };
 		EC84B06D20A59CCB0047C118 /* Dir.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dir.swift; sourceTree = "<group>"; };
 		EC84B06E20A59CCB0047C118 /* File.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
@@ -174,6 +184,11 @@
 				EC1C510F205623020033237E /* DicOBJ.swift */,
 				EC1C510D205621730033237E /* ArrayOBJ.swift */,
 				EC1C510B20561EC00033237E /* Loop.swift */,
+				EC6E1EA720A9684E0061D0DC /* Redis_Handler.swift */,
+				EC6E1EAF20A96B850061D0DC /* FanXing_SWF.swift */,
+				EC6E1EAD20A96A130061D0DC /* CPointer_SWF.swift */,
+				EC6E1EAB20A969DD0061D0DC /* RunLoop_SWF.swift */,
+				EC6E1EA920A968750061D0DC /* Basic_SWF.swift */,
 				EC1C5109205614E70033237E /* Guard.swift */,
 				EC1C510720560FF50033237E /* OptionalOBJ.swift */,
 				EC5CCC7A20523E4600AFBD98 /* Person.swift */,
@@ -312,6 +327,7 @@
 				EC84B09820A59CCB0047C118 /* NetUDP.swift in Sources */,
 				EC1C511420562EEB0033237E /* FuncOBJ.swift in Sources */,
 				ECF3B6CC20A2E59500DB7571 /* Stack.swift in Sources */,
+				EC6E1EAE20A96A130061D0DC /* CPointer_SWF.swift in Sources */,
 				EC84B09320A59CCB0047C118 /* NetAddress.swift in Sources */,
 				EC84B09420A59CCB0047C118 /* NetEvent.swift in Sources */,
 				EC1C510A205614E70033237E /* Guard.swift in Sources */,
@@ -320,6 +336,8 @@
 				ECF3B6C420A2C34700DB7571 /* OCFramWork.m in Sources */,
 				EC1C510E205621730033237E /* ArrayOBJ.swift in Sources */,
 				ECF3B6C820A2E1F700DB7571 /* Container.swift in Sources */,
+				EC6E1EAC20A969DD0061D0DC /* RunLoop_SWF.swift in Sources */,
+				EC6E1EB020A96B850061D0DC /* FanXing_SWF.swift in Sources */,
 				ECF3B6BD20A2B34E00DB7571 /* POBJ.swift in Sources */,
 				EC1C5112205626600033237E /* SetOBJ.swift in Sources */,
 				EC84B0A020A59CCB0047C118 /* Promise.swift in Sources */,
@@ -333,7 +351,9 @@
 				EC1C510C20561EC00033237E /* Loop.swift in Sources */,
 				EC84B08B20A59CCB0047C118 /* File.swift in Sources */,
 				ECF3B6C620A2D4F200DB7571 /* CopyArrayVSDictionary.swift in Sources */,
+				EC6E1EAA20A968750061D0DC /* Basic_SWF.swift in Sources */,
 				EC84B09020A59CCB0047C118 /* SysProcess.swift in Sources */,
+				EC6E1EA820A9684E0061D0DC /* Redis_Handler.swift in Sources */,
 				EC5CCC7220523C9E00AFBD98 /* main.swift in Sources */,
 				EC5CCC7920523CD200AFBD98 /* Test.swift in Sources */,
 				EC33990E20A409E80038360A /* hiredis_bridge.c in Sources */,
