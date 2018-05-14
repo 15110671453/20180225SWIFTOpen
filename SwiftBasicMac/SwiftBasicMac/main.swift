@@ -16,9 +16,53 @@
 
 import Foundation
 
-let net = Net.init()
-let tcp = NetTCP.init(fd: net.fd)
-let tcp1 = try tcp.bind(port: 8881, address: "127.0.0.1")
+/*
+ Swift 沿用 OC的三种线程技术
+ NSThread
+ 
+ 控制线程通讯 使用
+ Condition不是锁，而是条件。一个锁可能关联一个或多个条件。wait将线程休眠，signal将线程唤醒
+ 
+ OperatinQueue
+ 
+ Operation Group
+ 
+ GCDQueue
+ 
+ GCD 线程通讯 使用 信号量
+ 
+ Swift 使用Runloop
+ 
+ Swift 开源出来的跨平台 可以在linux mac 下兼容 开源出来的库
+ 包括了GCD libdispathch json解析 xml解析 队列 线程 网络请求
+ 
+ The Swift Core Libraries project provides higher-level functionality than the Swift standard library. These libraries provide powerful tools that developers can depend upon across all the platforms that Swift supports. The Core Libraries have a goal of providing stable and useful features in the following key areas:
+ 
+ Commonly needed types, including data, URLs, character sets, and specialized collections
+ Unit testing
+ Networking primitives
+ Scheduling and execution of work, including threads, queues, and notifications
+ Persistence, including property lists, archives, JSON parsing, and XML parsing
+ Support for dates, times, and calendrical calculations
+ Abstraction of OS-specific behavior
+ Interaction with the file system
+ Internationalization, including date and number formatting and language-specific resources
+ User preferences
+ */
+
+//创建一个全局队列。
+//get a global queue
+let globalQueue = DispatchQueue.global()
+
+    //使用全局队列，开启异步任务。
+    //use the global queue , run in asynchronous
+    globalQueue.async {
+        print("I am No., current thread name is:\(Thread.current)")
+      CFRunLoopGetCurrent()
+        
+        
+        
+    }
 
 /*
  Run loops are part of the fundamental infrastructure associated with threads. A run loop is an event processing loop that you use to schedule work and coordinate the receipt of incoming events. The purpose of a run loop is to keep your thread busy when there is work to do and put your thread to sleep when there is none.
