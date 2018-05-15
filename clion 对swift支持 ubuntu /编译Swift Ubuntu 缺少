@@ -1,0 +1,31 @@
+编译Swift Ubuntu 缺少
+
+
+
+
+libblocksruntime.so
+
+https://launchpad.net/ubuntu/+source/libblocksruntime/0.4.1-1.1
+
+
+swift 和 SourceKit  什么关系
+
+https://www.jpsim.com/uncovering-sourcekit/
+
+libsourcekitdInProc.so
+
+
+clion 对 swift 支持
+
+https://www.jetbrains.com/help/clion/swift.html
+
+安装 clion
+
+
+配置toolchain  c 编译器 任何操作系统都默认安装有
+
+/usr/bin/gcc
+
+但是c++ 需要操作系统 单独安装需要的版本 
+
+/usr/local/bin/gnu

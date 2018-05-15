@@ -1,0 +1,44 @@
+在linux 使用swift开发中 苹果的swift 到底开源了哪些 
+
+
+苹果的swift 到底开源了哪些
+https://swift.org/core-libraries/#foundation
+https://swift.org/source-code/#core-libraries
+
+我们可以在linux 开发中用到
+
+
+The Swift Core Libraries project provides higher-level functionality than the Swift standard library. These libraries provide powerful tools that developers can depend upon across all the platforms that Swift supports. The Core Libraries have a goal of providing stable and useful features in the following key areas:
+
+1、Commonly needed types, including data, URLs, character sets, and specialized collections
+
+2、Unit testing
+
+3、Networking primitives
+
+4、Scheduling and execution of work, including threads, queues, and notifications
+
+5、Persistence, including property lists, archives, JSON parsing, and XML parsing
+
+6、Support for dates, times, and calendrical calculations
+
+7、Abstraction of OS-specific behavior
+
+8、Interaction with the file system 
+
+9、Internationalization, including date and number formatting and language-specific resources
+
+10、User preferences
+
+
+
+
+
+
+
+
+
+
+
+
+

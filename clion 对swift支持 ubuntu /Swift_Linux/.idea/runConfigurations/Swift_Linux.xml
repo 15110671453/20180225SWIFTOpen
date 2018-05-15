@@ -1,0 +1,8 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="Swift_Linux" type="CMakeRunConfiguration" factoryName="Application" editBeforeRun="true" singleton="true" WORKING_DIR="file://$PROJECT_DIR$" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Swift_Linux" TARGET_NAME="Swift_Linux" CONFIG_NAME="Debug" RUN_PATH="$PROJECT_DIR$/Sources/main.swift">
+    <method>
+      <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="false" />
+      <option name="ToolBeforeRunTask" enabled="true" actionId="Tool_Swift_swift-build" />
+    </method>
+  </configuration>
+</component>

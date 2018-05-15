@@ -1,0 +1,31 @@
+Swift-redis 
+
+
+第一 由于 Swift 不支持c的 Variadic function 可变参数函数
+
+我们需要 对 redis 的 一些接口 重新定义
+
+创建桥接库
+我们创建一个C库，名为：hiredis-bridge，里面包含hiredis-bridge.h、hiredis-bridge.c和Makefile三个文件。我们只需要在这个C库中重新创建一个redisSendCommand方法来封装redisCommand就可以解决问题了。这里我们只使用到一些简单的C语言语法就行了。 hiredis-bridge.h的内容为：
+
+#ifndef hiredis_bridge_h
+#define hiredis_bridge_h
+
+#include "hiredis/hiredis.h"
+
+void *redisSendCommand(redisContext *c, const char *format);
+
+#endif
+
+
+hiredis-bridge.c内容为：
+#include "hiredis-bridge.h"
+#include "hiredis/hiredis.h"
+
+void *redisSendCommand(redisContext *c, const char *format){
+    return redisCommand(c, format);
+}
+
+
+创建MakeFile 帮助我们编译这个库
+
