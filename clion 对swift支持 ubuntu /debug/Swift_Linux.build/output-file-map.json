@@ -1,0 +1,95 @@
+{
+  "": {
+    "swift-dependencies": "/home/admindyn/CLionProjects/Swift_Linux/.build/x86_64-unknown-linux/debug/Swift_Linux.build/master.swiftdeps"
+  },
+  "/home/admindyn/CLionProjects/Swift_Linux/Sources/ArrayOBJ.swift": {
+    "dependencies": "/home/admindyn/CLionProjects/Swift_Linux/.build/x86_64-unknown-linux/debug/Swift_Linux.build/ArrayOBJ.d",
+    "object": "/home/admindyn/CLionProjects/Swift_Linux/.build/x86_64-unknown-linux/debug/Swift_Linux.build/Sources/ArrayOBJ.swift.o",
+    "swiftmodule": "/home/admindyn/CLionProjects/Swift_Linux/.build/x86_64-unknown-linux/debug/Swift_Linux.build/ArrayOBJ~partial.swiftmodule",
+    "swift-dependencies": "/home/admindyn/CLionProjects/Swift_Linux/.build/x86_64-unknown-linux/debug/Swift_Linux.build/ArrayOBJ.swiftdeps"
+  },
+  "/home/admindyn/CLionProjects/Swift_Linux/Sources/Container.swift": {
+    "dependencies": "/home/admindyn/CLionProjects/Swift_Linux/.build/x86_64-unknown-linux/debug/Swift_Linux.build/Container.d",
+    "object": "/home/admindyn/CLionProjects/Swift_Linux/.build/x86_64-unknown-linux/debug/Swift_Linux.build/Sources/Container.swift.o",
+    "swiftmodule": "/home/admindyn/CLionProjects/Swift_Linux/.build/x86_64-unknown-linux/debug/Swift_Linux.build/Container~partial.swiftmodule",
+    "swift-dependencies": "/home/admindyn/CLionProjects/Swift_Linux/.build/x86_64-unknown-linux/debug/Swift_Linux.build/Container.swiftdeps"
+  },
+  "/home/admindyn/CLionProjects/Swift_Linux/Sources/CopyArrayVSDictionary.swift": {
+    "dependencies": "/home/admindyn/CLionProjects/Swift_Linux/.build/x86_64-unknown-linux/debug/Swift_Linux.build/CopyArrayVSDictionary.d",
+    "object": "/home/admindyn/CLionProjects/Swift_Linux/.build/x86_64-unknown-linux/debug/Swift_Linux.build/Sources/CopyArrayVSDictionary.swift.o",
+    "swiftmodule": "/home/admindyn/CLionProjects/Swift_Linux/.build/x86_64-unknown-linux/debug/Swift_Linux.build/CopyArrayVSDictionary~partial.swiftmodule",
+    "swift-dependencies": "/home/admindyn/CLionProjects/Swift_Linux/.build/x86_64-unknown-linux/debug/Swift_Linux.build/CopyArrayVSDictionary.swiftdeps"
+  },
+  "/home/admindyn/CLionProjects/Swift_Linux/Sources/DicOBJ.swift": {
+    "dependencies": "/home/admindyn/CLionProjects/Swift_Linux/.build/x86_64-unknown-linux/debug/Swift_Linux.build/DicOBJ.d",
+    "object": "/home/admindyn/CLionProjects/Swift_Linux/.build/x86_64-unknown-linux/debug/Swift_Linux.build/Sources/DicOBJ.swift.o",
+    "swiftmodule": "/home/admindyn/CLionProjects/Swift_Linux/.build/x86_64-unknown-linux/debug/Swift_Linux.build/DicOBJ~partial.swiftmodule",
+    "swift-dependencies": "/home/admindyn/CLionProjects/Swift_Linux/.build/x86_64-unknown-linux/debug/Swift_Linux.build/DicOBJ.swiftdeps"
+  },
+  "/home/admindyn/CLionProjects/Swift_Linux/Sources/FuncOBJ.swift": {
+    "dependencies": "/home/admindyn/CLionProjects/Swift_Linux/.build/x86_64-unknown-linux/debug/Swift_Linux.build/FuncOBJ.d",
+    "object": "/home/admindyn/CLionProjects/Swift_Linux/.build/x86_64-unknown-linux/debug/Swift_Linux.build/Sources/FuncOBJ.swift.o",
+    "swiftmodule": "/home/admindyn/CLionProjects/Swift_Linux/.build/x86_64-unknown-linux/debug/Swift_Linux.build/FuncOBJ~partial.swiftmodule",
+    "swift-dependencies": "/home/admindyn/CLionProjects/Swift_Linux/.build/x86_64-unknown-linux/debug/Swift_Linux.build/FuncOBJ.swiftdeps"
+  },
+  "/home/admindyn/CLionProjects/Swift_Linux/Sources/Guard.swift": {
+    "dependencies": "/home/admindyn/CLionProjects/Swift_Linux/.build/x86_64-unknown-linux/debug/Swift_Linux.build/Guard.d",
+    "object": "/home/admindyn/CLionProjects/Swift_Linux/.build/x86_64-unknown-linux/debug/Swift_Linux.build/Sources/Guard.swift.o",
+    "swiftmodule": "/home/admindyn/CLionProjects/Swift_Linux/.build/x86_64-unknown-linux/debug/Swift_Linux.build/Guard~partial.swiftmodule",
+    "swift-dependencies": "/home/admindyn/CLionProjects/Swift_Linux/.build/x86_64-unknown-linux/debug/Swift_Linux.build/Guard.swiftdeps"
+  },
+  "/home/admindyn/CLionProjects/Swift_Linux/Sources/IntStack.swift": {
+    "dependencies": "/home/admindyn/CLionProjects/Swift_Linux/.build/x86_64-unknown-linux/debug/Swift_Linux.build/IntStack.d",
+    "object": "/home/admindyn/CLionProjects/Swift_Linux/.build/x86_64-unknown-linux/debug/Swift_Linux.build/Sources/IntStack.swift.o",
+    "swiftmodule": "/home/admindyn/CLionProjects/Swift_Linux/.build/x86_64-unknown-linux/debug/Swift_Linux.build/IntStack~partial.swiftmodule",
+    "swift-dependencies": "/home/admindyn/CLionProjects/Swift_Linux/.build/x86_64-unknown-linux/debug/Swift_Linux.build/IntStack.swiftdeps"
+  },
+  "/home/admindyn/CLionProjects/Swift_Linux/Sources/Loop.swift": {
+    "dependencies": "/home/admindyn/CLionProjects/Swift_Linux/.build/x86_64-unknown-linux/debug/Swift_Linux.build/Loop.d",
+    "object": "/home/admindyn/CLionProjects/Swift_Linux/.build/x86_64-unknown-linux/debug/Swift_Linux.build/Sources/Loop.swift.o",
+    "swiftmodule": "/home/admindyn/CLionProjects/Swift_Linux/.build/x86_64-unknown-linux/debug/Swift_Linux.build/Loop~partial.swiftmodule",
+    "swift-dependencies": "/home/admindyn/CLionProjects/Swift_Linux/.build/x86_64-unknown-linux/debug/Swift_Linux.build/Loop.swiftdeps"
+  },
+  "/home/admindyn/CLionProjects/Swift_Linux/Sources/main.swift": {
+    "dependencies": "/home/admindyn/CLionProjects/Swift_Linux/.build/x86_64-unknown-linux/debug/Swift_Linux.build/main.d",
+    "object": "/home/admindyn/CLionProjects/Swift_Linux/.build/x86_64-unknown-linux/debug/Swift_Linux.build/Sources/main.swift.o",
+    "swiftmodule": "/home/admindyn/CLionProjects/Swift_Linux/.build/x86_64-unknown-linux/debug/Swift_Linux.build/main~partial.swiftmodule",
+    "swift-dependencies": "/home/admindyn/CLionProjects/Swift_Linux/.build/x86_64-unknown-linux/debug/Swift_Linux.build/main.swiftdeps"
+  },
+  "/home/admindyn/CLionProjects/Swift_Linux/Sources/OptionalOBJ.swift": {
+    "dependencies": "/home/admindyn/CLionProjects/Swift_Linux/.build/x86_64-unknown-linux/debug/Swift_Linux.build/OptionalOBJ.d",
+    "object": "/home/admindyn/CLionProjects/Swift_Linux/.build/x86_64-unknown-linux/debug/Swift_Linux.build/Sources/OptionalOBJ.swift.o",
+    "swiftmodule": "/home/admindyn/CLionProjects/Swift_Linux/.build/x86_64-unknown-linux/debug/Swift_Linux.build/OptionalOBJ~partial.swiftmodule",
+    "swift-dependencies": "/home/admindyn/CLionProjects/Swift_Linux/.build/x86_64-unknown-linux/debug/Swift_Linux.build/OptionalOBJ.swiftdeps"
+  },
+  "/home/admindyn/CLionProjects/Swift_Linux/Sources/Person.swift": {
+    "dependencies": "/home/admindyn/CLionProjects/Swift_Linux/.build/x86_64-unknown-linux/debug/Swift_Linux.build/Person.d",
+    "object": "/home/admindyn/CLionProjects/Swift_Linux/.build/x86_64-unknown-linux/debug/Swift_Linux.build/Sources/Person.swift.o",
+    "swiftmodule": "/home/admindyn/CLionProjects/Swift_Linux/.build/x86_64-unknown-linux/debug/Swift_Linux.build/Person~partial.swiftmodule",
+    "swift-dependencies": "/home/admindyn/CLionProjects/Swift_Linux/.build/x86_64-unknown-linux/debug/Swift_Linux.build/Person.swiftdeps"
+  },
+  "/home/admindyn/CLionProjects/Swift_Linux/Sources/SetOBJ.swift": {
+    "dependencies": "/home/admindyn/CLionProjects/Swift_Linux/.build/x86_64-unknown-linux/debug/Swift_Linux.build/SetOBJ.d",
+    "object": "/home/admindyn/CLionProjects/Swift_Linux/.build/x86_64-unknown-linux/debug/Swift_Linux.build/Sources/SetOBJ.swift.o",
+    "swiftmodule": "/home/admindyn/CLionProjects/Swift_Linux/.build/x86_64-unknown-linux/debug/Swift_Linux.build/SetOBJ~partial.swiftmodule",
+    "swift-dependencies": "/home/admindyn/CLionProjects/Swift_Linux/.build/x86_64-unknown-linux/debug/Swift_Linux.build/SetOBJ.swiftdeps"
+  },
+  "/home/admindyn/CLionProjects/Swift_Linux/Sources/Stack.swift": {
+    "dependencies": "/home/admindyn/CLionProjects/Swift_Linux/.build/x86_64-unknown-linux/debug/Swift_Linux.build/Stack.d",
+    "object": "/home/admindyn/CLionProjects/Swift_Linux/.build/x86_64-unknown-linux/debug/Swift_Linux.build/Sources/Stack.swift.o",
+    "swiftmodule": "/home/admindyn/CLionProjects/Swift_Linux/.build/x86_64-unknown-linux/debug/Swift_Linux.build/Stack~partial.swiftmodule",
+    "swift-dependencies": "/home/admindyn/CLionProjects/Swift_Linux/.build/x86_64-unknown-linux/debug/Swift_Linux.build/Stack.swiftdeps"
+  },
+  "/home/admindyn/CLionProjects/Swift_Linux/Sources/Test.swift": {
+    "dependencies": "/home/admindyn/CLionProjects/Swift_Linux/.build/x86_64-unknown-linux/debug/Swift_Linux.build/Test.d",
+    "object": "/home/admindyn/CLionProjects/Swift_Linux/.build/x86_64-unknown-linux/debug/Swift_Linux.build/Sources/Test.swift.o",
+    "swiftmodule": "/home/admindyn/CLionProjects/Swift_Linux/.build/x86_64-unknown-linux/debug/Swift_Linux.build/Test~partial.swiftmodule",
+    "swift-dependencies": "/home/admindyn/CLionProjects/Swift_Linux/.build/x86_64-unknown-linux/debug/Swift_Linux.build/Test.swiftdeps"
+  },
+  "/home/admindyn/CLionProjects/Swift_Linux/Sources/TestLinux.swift": {
+    "dependencies": "/home/admindyn/CLionProjects/Swift_Linux/.build/x86_64-unknown-linux/debug/Swift_Linux.build/TestLinux.d",
+    "object": "/home/admindyn/CLionProjects/Swift_Linux/.build/x86_64-unknown-linux/debug/Swift_Linux.build/Sources/TestLinux.swift.o",
+    "swiftmodule": "/home/admindyn/CLionProjects/Swift_Linux/.build/x86_64-unknown-linux/debug/Swift_Linux.build/TestLinux~partial.swiftmodule",
+    "swift-dependencies": "/home/admindyn/CLionProjects/Swift_Linux/.build/x86_64-unknown-linux/debug/Swift_Linux.build/TestLinux.swiftdeps"
+  }
+}

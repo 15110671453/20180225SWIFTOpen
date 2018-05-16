@@ -1,0 +1,27 @@
+### Swift dependencies file v0 ###
+provides-top-level:
+- "Container"
+provides-nominal:
+- "11Swift_Linux9ContainerP"
+provides-member:
+- ["11Swift_Linux9ContainerP", ""]
+depends-top-level:
+- "Container"
+- "Int"
+depends-member:
+- ["11Swift_Linux9ContainerP", "Int"]
+- ["11Swift_Linux9ContainerP", "ItemType"]
+- ["11Swift_Linux9ContainerP", "append"]
+- ["11Swift_Linux9ContainerP", "count"]
+- ["11Swift_Linux9ContainerP", "subscript"]
+depends-nominal:
+- "11Swift_Linux9ContainerP"
+depends-dynamic-lookup:
+depends-external:
+- "/home/admindyn/Desktop/swift-4.0-DEVELOPMENT-SNAPSHOT-2017-12-04-a-ubuntu16.10/usr/lib/swift/linux/x86_64/Glibc.swiftmodule"
+- "/home/admindyn/Desktop/swift-4.0-DEVELOPMENT-SNAPSHOT-2017-12-04-a-ubuntu16.10/usr/lib/swift/linux/x86_64/Dispatch.swiftmodule"
+- "/home/admindyn/Desktop/swift-4.0-DEVELOPMENT-SNAPSHOT-2017-12-04-a-ubuntu16.10/usr/lib/swift/linux/x86_64/Foundation.swiftmodule"
+- "/home/admindyn/Desktop/swift-4.0-DEVELOPMENT-SNAPSHOT-2017-12-04-a-ubuntu16.10/usr/lib/swift/linux/x86_64/Swift.swiftmodule"
+- "/home/admindyn/Desktop/swift-4.0-DEVELOPMENT-SNAPSHOT-2017-12-04-a-ubuntu16.10/usr/lib/swift/linux/x86_64/SwiftOnoneSupport.swiftmodule"
+- "/home/admindyn/Desktop/swift-4.0-DEVELOPMENT-SNAPSHOT-2017-12-04-a-ubuntu16.10/usr/lib/swift/linux/x86_64/glibc.modulemap"
+interface-hash: "365a1572157e1f8423a11c3336328378"

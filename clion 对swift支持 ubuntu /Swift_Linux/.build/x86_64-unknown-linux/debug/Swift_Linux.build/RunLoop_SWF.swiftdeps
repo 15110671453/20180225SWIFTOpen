@@ -1,0 +1,81 @@
+### Swift dependencies file v0 ###
+provides-top-level:
+- "WUNTRACED"
+- "WNOHANG"
+- "SIGTERM"
+- "RunLoop_SWF"
+provides-nominal:
+- "11Swift_Linux11RunLoop_SWFC"
+provides-member:
+- ["11Swift_Linux11RunLoop_SWFC", ""]
+depends-top-level:
+- !private "DispatchQueue"
+- "FloatLiteralType"
+- "Int32"
+- "IntegerLiteralType"
+- "RunLoop_SWF"
+- "SIGTERM"
+- "WNOHANG"
+- "WUNTRACED"
+depends-member:
+- ["s13BinaryIntegerP", "init"]
+- ["s7CVarArgP", "init"]
+- ["s10ComparableP", "init"]
+- ["s29CustomPlaygroundQuickLookableP", "init"]
+- ["s17CustomReflectableP", "init"]
+- ["s23CustomStringConvertibleP", "init"]
+- ["s9DecodableP", "init"]
+- ["s9EncodableP", "init"]
+- ["s9EquatableP", "init"]
+- ["s27ExpressibleByIntegerLiteralP", "init"]
+- ["s17FixedWidthIntegerP", "init"]
+- ["s8HashableP", "init"]
+- ["s5Int32V", "init"]
+- ["s25LosslessStringConvertibleP", "init"]
+- ["s7NumericP", "init"]
+- !private ["11Swift_Linux11RunLoop_SWFC", "DispatchQueue"]
+- ["11Swift_Linux11RunLoop_SWFC", "deinit"]
+- ["11Swift_Linux11RunLoop_SWFC", "init"]
+- ["11Swift_Linux11RunLoop_SWFC", "test"]
+- ["s13SignedIntegerP", "init"]
+- ["s13SignedNumericP", "init"]
+- ["s10StrideableP", "init"]
+- ["s18_BitwiseOperationsP", "init"]
+- ["s35_ExpressibleByBuiltinIntegerLiteralP", "init"]
+- ["10Foundation17_ObjectBridgeableP", "init"]
+- ["10Foundation21_ObjectTypeBridgeableP", "init"]
+- ["s11_StrideableP", "init"]
+depends-nominal:
+- "s13BinaryIntegerP"
+- "s7CVarArgP"
+- "s10ComparableP"
+- "s29CustomPlaygroundQuickLookableP"
+- "s17CustomReflectableP"
+- "s23CustomStringConvertibleP"
+- "s9DecodableP"
+- "s9EncodableP"
+- "s9EquatableP"
+- "s27ExpressibleByIntegerLiteralP"
+- "s17FixedWidthIntegerP"
+- "s8HashableP"
+- "s5Int32V"
+- "s25LosslessStringConvertibleP"
+- "s7NumericP"
+- "11Swift_Linux11RunLoop_SWFC"
+- "s13SignedIntegerP"
+- "s13SignedNumericP"
+- "s10StrideableP"
+- "s18_BitwiseOperationsP"
+- "s35_ExpressibleByBuiltinIntegerLiteralP"
+- "10Foundation17_ObjectBridgeableP"
+- "10Foundation21_ObjectTypeBridgeableP"
+- "s11_StrideableP"
+depends-dynamic-lookup:
+depends-external:
+- "/home/admindyn/Desktop/swift-4.0-DEVELOPMENT-SNAPSHOT-2017-12-04-a-ubuntu16.10/usr/lib/swift/linux/x86_64/Glibc.swiftmodule"
+- "/home/admindyn/Desktop/swift-4.0-DEVELOPMENT-SNAPSHOT-2017-12-04-a-ubuntu16.10/usr/lib/swift/linux/x86_64/Dispatch.swiftmodule"
+- "/home/admindyn/Desktop/swift-4.0-DEVELOPMENT-SNAPSHOT-2017-12-04-a-ubuntu16.10/usr/lib/swift/linux/x86_64/Foundation.swiftmodule"
+- "/home/admindyn/Desktop/swift-4.0-DEVELOPMENT-SNAPSHOT-2017-12-04-a-ubuntu16.10/usr/lib/swift/linux/x86_64/Swift.swiftmodule"
+- "/home/admindyn/Desktop/swift-4.0-DEVELOPMENT-SNAPSHOT-2017-12-04-a-ubuntu16.10/usr/lib/swift/linux/x86_64/SwiftOnoneSupport.swiftmodule"
+- "/home/admindyn/Desktop/swift-4.0-DEVELOPMENT-SNAPSHOT-2017-12-04-a-ubuntu16.10/usr/lib/swift/linux/x86_64/glibc.modulemap"
+interface-hash: "cf3ed3961c570a8d6a7dc3226e52275d"

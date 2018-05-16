@@ -4,6 +4,9 @@
 import PackageDescription
 
 let package = Package(
-    name: "Swift_Linux"
+    name: "Swift_Linux",
+     targets: [
+        .target(name: "Swift_Linux", dependencies: [],path:""),
+    ]
 
 )

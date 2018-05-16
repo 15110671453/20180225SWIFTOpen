@@ -1,0 +1,19 @@
+version: "Swift version 4.0.3-dev (LLVM 2dedb62a0b, Clang ab7472e733, Swift 64ab6903b2)"
+options: "ad1f55d3c8d6b2f1d4ce096ea457b4a5"
+build_time: [1526457354, 622853327]
+inputs:
+  "/home/admindyn/CLionProjects/Swift_Linux/Sources/ArrayOBJ.swift": [1520823923, 0]
+  "/home/admindyn/CLionProjects/Swift_Linux/Sources/Container.swift": [1525854001, 0]
+  "/home/admindyn/CLionProjects/Swift_Linux/Sources/CopyArrayVSDictionary.swift": [1525850156, 0]
+  "/home/admindyn/CLionProjects/Swift_Linux/Sources/DicOBJ.swift": [1520823762, 0]
+  "/home/admindyn/CLionProjects/Swift_Linux/Sources/FuncOBJ.swift": [1520908703, 0]
+  "/home/admindyn/CLionProjects/Swift_Linux/Sources/Guard.swift": [1520822503, 0]
+  "/home/admindyn/CLionProjects/Swift_Linux/Sources/IntStack.swift": [1525854134, 0]
+  "/home/admindyn/CLionProjects/Swift_Linux/Sources/Loop.swift": [1520822543, 0]
+  "/home/admindyn/CLionProjects/Swift_Linux/Sources/main.swift": !dirty [1526457350, 0]
+  "/home/admindyn/CLionProjects/Swift_Linux/Sources/OptionalOBJ.swift": [1520819380, 0]
+  "/home/admindyn/CLionProjects/Swift_Linux/Sources/Person.swift": [1525843340, 0]
+  "/home/admindyn/CLionProjects/Swift_Linux/Sources/SetOBJ.swift": [1520826159, 0]
+  "/home/admindyn/CLionProjects/Swift_Linux/Sources/Stack.swift": [1525854012, 0]
+  "/home/admindyn/CLionProjects/Swift_Linux/Sources/Test.swift": [1520817768, 0]
+  "/home/admindyn/CLionProjects/Swift_Linux/Sources/TestLinux.swift": [1526366675, 0]

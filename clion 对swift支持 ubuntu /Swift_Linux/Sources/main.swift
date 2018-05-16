@@ -11,9 +11,7 @@
 //MARK:Process
 #if os(Linux)
     import SwiftGlibc
-let WUNTRACED = Int32(2)
-let WNOHANG = Int32(1)
-let SIGTERM = Int32(15)
+
 #else
     import Darwin
 #endif
@@ -25,79 +23,19 @@ let SIGTERM = Int32(15)
  #define  VALUE_TYPE_INT
  */
 
-
+import CoreFoundation
 import Foundation
+
+
 //MARK: Handle Code
-
-
-print("main swift  running")
-
-
-let rl = RunLoop_SWF()
-
-rl.test()
-
-
-
-
-
-
-let redis = Redis_Handler()
-
-redis.test()
-
-let danli = FanXing_SWF()
-
-danli.test()
-
-
-let cPtr = CPointer_SWF()
-
-cPtr.test()
-
-
-let bSW = BasicSWF()
-
-bSW.test()
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
 
 //MARK:RunLoopConfig
-let runLoop = CFRunLoopGetCurrent()
+
+
+let runLoop = RunLoop.current
 
 let firedate = CFAbsoluteTimeGetCurrent()
 
@@ -133,7 +71,8 @@ withUnsafePointer(to: &timerCon, { (p:UnsafePointer) -> String in
 let timer  = CFRunLoopTimerCreate(kCFAllocatorDefault, firedate,20, 0, 0, { (timer:CFRunLoopTimer?, p:UnsafeMutableRawPointer?) -> Void in
     
     //MARK:主队列 任务
-    
+
+    print("main swift  running")
     
     print("test main \(CFDateCreate(kCFAllocatorDefault, CFAbsoluteTimeGetCurrent()))")
     
@@ -149,7 +88,9 @@ if repeatState {
     
 }
 
-CFRunLoopAddTimer(runLoop, timer,CFRunLoopMode.defaultMode )
+let cf = runLoop.getCFRunLoop()
+
+CFRunLoopAddTimer(cf, timer, kCFRunLoopDefaultMode)
 
 
 CFRunLoopRun()

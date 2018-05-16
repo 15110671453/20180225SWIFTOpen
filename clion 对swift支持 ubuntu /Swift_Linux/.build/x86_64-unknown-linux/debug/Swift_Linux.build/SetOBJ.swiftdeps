@@ -1,0 +1,315 @@
+### Swift dependencies file v0 ###
+provides-top-level:
+- "SetOBJ"
+provides-nominal:
+- "11Swift_Linux6SetOBJC"
+provides-member:
+- ["11Swift_Linux6SetOBJC", ""]
+depends-top-level:
+- !private "!"
+- !private "+"
+- !private "=="
+- !private "Array"
+- !private "FloatLiteralType"
+- !private "IntegerLiteralType"
+- !private "Set"
+- "SetOBJ"
+- !private "String"
+- !private "StringLiteralType"
+- !private "UnicodeScalarType"
+- !private "print"
+depends-member:
+- !private ["s23BidirectionalCollectionP", "init"]
+- !private ["Sb", "_getBuiltinLogicValue"]
+- !private ["s10CollectionP", "contains"]
+- !private ["s10CollectionP", "enumerated"]
+- !private ["s10CollectionP", "init"]
+- !private ["s10CollectionP", "insert"]
+- !private ["s10CollectionP", "intersection"]
+- !private ["s10CollectionP", "isSubset"]
+- !private ["s10CollectionP", "remove"]
+- !private ["s10CollectionP", "removeFirst"]
+- !private ["s10CollectionP", "subtracting"]
+- !private ["s10CollectionP", "symmetricDifference"]
+- !private ["s10CollectionP", "union"]
+- !private ["s10ComparableP", "init"]
+- !private ["s28CustomDebugStringConvertibleP", "contains"]
+- !private ["s28CustomDebugStringConvertibleP", "enumerated"]
+- !private ["s28CustomDebugStringConvertibleP", "init"]
+- !private ["s28CustomDebugStringConvertibleP", "insert"]
+- !private ["s28CustomDebugStringConvertibleP", "intersection"]
+- !private ["s28CustomDebugStringConvertibleP", "isSubset"]
+- !private ["s28CustomDebugStringConvertibleP", "remove"]
+- !private ["s28CustomDebugStringConvertibleP", "removeFirst"]
+- !private ["s28CustomDebugStringConvertibleP", "subtracting"]
+- !private ["s28CustomDebugStringConvertibleP", "symmetricDifference"]
+- !private ["s28CustomDebugStringConvertibleP", "union"]
+- !private ["s29CustomPlaygroundQuickLookableP", "_getBuiltinLogicValue"]
+- !private ["s29CustomPlaygroundQuickLookableP", "init"]
+- !private ["s17CustomReflectableP", "_getBuiltinLogicValue"]
+- !private ["s17CustomReflectableP", "contains"]
+- !private ["s17CustomReflectableP", "enumerated"]
+- !private ["s17CustomReflectableP", "init"]
+- !private ["s17CustomReflectableP", "insert"]
+- !private ["s17CustomReflectableP", "intersection"]
+- !private ["s17CustomReflectableP", "isSubset"]
+- !private ["s17CustomReflectableP", "remove"]
+- !private ["s17CustomReflectableP", "removeFirst"]
+- !private ["s17CustomReflectableP", "subtracting"]
+- !private ["s17CustomReflectableP", "symmetricDifference"]
+- !private ["s17CustomReflectableP", "union"]
+- !private ["s23CustomStringConvertibleP", "_getBuiltinLogicValue"]
+- !private ["s23CustomStringConvertibleP", "contains"]
+- !private ["s23CustomStringConvertibleP", "enumerated"]
+- !private ["s23CustomStringConvertibleP", "init"]
+- !private ["s23CustomStringConvertibleP", "insert"]
+- !private ["s23CustomStringConvertibleP", "intersection"]
+- !private ["s23CustomStringConvertibleP", "isSubset"]
+- !private ["s23CustomStringConvertibleP", "remove"]
+- !private ["s23CustomStringConvertibleP", "removeFirst"]
+- !private ["s23CustomStringConvertibleP", "subtracting"]
+- !private ["s23CustomStringConvertibleP", "symmetricDifference"]
+- !private ["s23CustomStringConvertibleP", "union"]
+- !private ["s9DecodableP", "_getBuiltinLogicValue"]
+- !private ["s9DecodableP", "contains"]
+- !private ["s9DecodableP", "enumerated"]
+- !private ["s9DecodableP", "init"]
+- !private ["s9DecodableP", "insert"]
+- !private ["s9DecodableP", "intersection"]
+- !private ["s9DecodableP", "isSubset"]
+- !private ["s9DecodableP", "remove"]
+- !private ["s9DecodableP", "removeFirst"]
+- !private ["s9DecodableP", "subtracting"]
+- !private ["s9DecodableP", "symmetricDifference"]
+- !private ["s9DecodableP", "union"]
+- !private ["s9EncodableP", "_getBuiltinLogicValue"]
+- !private ["s9EncodableP", "contains"]
+- !private ["s9EncodableP", "enumerated"]
+- !private ["s9EncodableP", "init"]
+- !private ["s9EncodableP", "insert"]
+- !private ["s9EncodableP", "intersection"]
+- !private ["s9EncodableP", "isSubset"]
+- !private ["s9EncodableP", "remove"]
+- !private ["s9EncodableP", "removeFirst"]
+- !private ["s9EncodableP", "subtracting"]
+- !private ["s9EncodableP", "symmetricDifference"]
+- !private ["s9EncodableP", "union"]
+- !private ["s9EquatableP", "_getBuiltinLogicValue"]
+- !private ["s9EquatableP", "contains"]
+- !private ["s9EquatableP", "enumerated"]
+- !private ["s9EquatableP", "init"]
+- !private ["s9EquatableP", "insert"]
+- !private ["s9EquatableP", "intersection"]
+- !private ["s9EquatableP", "isSubset"]
+- !private ["s9EquatableP", "remove"]
+- !private ["s9EquatableP", "removeFirst"]
+- !private ["s9EquatableP", "subtracting"]
+- !private ["s9EquatableP", "symmetricDifference"]
+- !private ["s9EquatableP", "union"]
+- !private ["s25ExpressibleByArrayLiteralP", "contains"]
+- !private ["s25ExpressibleByArrayLiteralP", "enumerated"]
+- !private ["s25ExpressibleByArrayLiteralP", "init"]
+- !private ["s25ExpressibleByArrayLiteralP", "insert"]
+- !private ["s25ExpressibleByArrayLiteralP", "intersection"]
+- !private ["s25ExpressibleByArrayLiteralP", "isSubset"]
+- !private ["s25ExpressibleByArrayLiteralP", "remove"]
+- !private ["s25ExpressibleByArrayLiteralP", "removeFirst"]
+- !private ["s25ExpressibleByArrayLiteralP", "subtracting"]
+- !private ["s25ExpressibleByArrayLiteralP", "symmetricDifference"]
+- !private ["s25ExpressibleByArrayLiteralP", "union"]
+- !private ["s27ExpressibleByBooleanLiteralP", "_getBuiltinLogicValue"]
+- !private ["s43ExpressibleByExtendedGraphemeClusterLiteralP", "init"]
+- !private ["s26ExpressibleByStringLiteralP", "init"]
+- !private ["s33ExpressibleByUnicodeScalarLiteralP", "init"]
+- !private ["s8HashableP", "_getBuiltinLogicValue"]
+- !private ["s8HashableP", "contains"]
+- !private ["s8HashableP", "enumerated"]
+- !private ["s8HashableP", "init"]
+- !private ["s8HashableP", "insert"]
+- !private ["s8HashableP", "intersection"]
+- !private ["s8HashableP", "isSubset"]
+- !private ["s8HashableP", "remove"]
+- !private ["s8HashableP", "removeFirst"]
+- !private ["s8HashableP", "subtracting"]
+- !private ["s8HashableP", "symmetricDifference"]
+- !private ["s8HashableP", "union"]
+- !private ["s25LosslessStringConvertibleP", "_getBuiltinLogicValue"]
+- !private ["s25LosslessStringConvertibleP", "init"]
+- !private ["s10MirrorPathP", "init"]
+- !private ["s26RangeReplaceableCollectionP", "init"]
+- !private ["s8SequenceP", "contains"]
+- !private ["s8SequenceP", "enumerated"]
+- !private ["s8SequenceP", "init"]
+- !private ["s8SequenceP", "insert"]
+- !private ["s8SequenceP", "intersection"]
+- !private ["s8SequenceP", "isSubset"]
+- !private ["s8SequenceP", "remove"]
+- !private ["s8SequenceP", "removeFirst"]
+- !private ["s8SequenceP", "subtracting"]
+- !private ["s8SequenceP", "symmetricDifference"]
+- !private ["s8SequenceP", "union"]
+- !private ["s3SetV", "contains"]
+- !private ["s3SetV", "enumerated"]
+- !private ["s3SetV", "init"]
+- !private ["s3SetV", "insert"]
+- !private ["s3SetV", "intersection"]
+- !private ["s3SetV", "isSubset"]
+- !private ["s3SetV", "remove"]
+- !private ["s3SetV", "removeFirst"]
+- !private ["s3SetV", "subtracting"]
+- !private ["s3SetV", "symmetricDifference"]
+- !private ["s3SetV", "union"]
+- !private ["s10SetAlgebraP", "contains"]
+- !private ["s10SetAlgebraP", "enumerated"]
+- !private ["s10SetAlgebraP", "init"]
+- !private ["s10SetAlgebraP", "insert"]
+- !private ["s10SetAlgebraP", "intersection"]
+- !private ["s10SetAlgebraP", "isSubset"]
+- !private ["s10SetAlgebraP", "remove"]
+- !private ["s10SetAlgebraP", "removeFirst"]
+- !private ["s10SetAlgebraP", "subtracting"]
+- !private ["s10SetAlgebraP", "symmetricDifference"]
+- !private ["s10SetAlgebraP", "union"]
+- !private ["11Swift_Linux6SetOBJC", "Set"]
+- !private ["11Swift_Linux6SetOBJC", "String"]
+- ["11Swift_Linux6SetOBJC", "deinit"]
+- ["11Swift_Linux6SetOBJC", "init"]
+- ["11Swift_Linux6SetOBJC", "operateSet"]
+- !private ["11Swift_Linux6SetOBJC", "print"]
+- ["11Swift_Linux6SetOBJC", "testSet"]
+- ["11Swift_Linux6SetOBJC", "updateBSet"]
+- !private ["SS", "init"]
+- !private ["s14StringProtocolP", "init"]
+- !private ["s16TextOutputStreamP", "init"]
+- !private ["s20TextOutputStreamableP", "init"]
+- !private ["s23_BidirectionalIndexableP", "init"]
+- !private ["10Foundation13_CFBridgeableP", "_getBuiltinLogicValue"]
+- !private ["10Foundation13_CFBridgeableP", "contains"]
+- !private ["10Foundation13_CFBridgeableP", "enumerated"]
+- !private ["10Foundation13_CFBridgeableP", "init"]
+- !private ["10Foundation13_CFBridgeableP", "insert"]
+- !private ["10Foundation13_CFBridgeableP", "intersection"]
+- !private ["10Foundation13_CFBridgeableP", "isSubset"]
+- !private ["10Foundation13_CFBridgeableP", "remove"]
+- !private ["10Foundation13_CFBridgeableP", "removeFirst"]
+- !private ["10Foundation13_CFBridgeableP", "subtracting"]
+- !private ["10Foundation13_CFBridgeableP", "symmetricDifference"]
+- !private ["10Foundation13_CFBridgeableP", "union"]
+- !private ["s35_ExpressibleByBuiltinBooleanLiteralP", "_getBuiltinLogicValue"]
+- !private ["s51_ExpressibleByBuiltinExtendedGraphemeClusterLiteralP", "init"]
+- !private ["s34_ExpressibleByBuiltinStringLiteralP", "init"]
+- !private ["s39_ExpressibleByBuiltinUTF16StringLiteralP", "init"]
+- !private ["s41_ExpressibleByBuiltinUnicodeScalarLiteralP", "init"]
+- !private ["s33_ExpressibleByStringInterpolationP", "init"]
+- !private ["s10_IndexableP", "contains"]
+- !private ["s10_IndexableP", "enumerated"]
+- !private ["s10_IndexableP", "init"]
+- !private ["s10_IndexableP", "insert"]
+- !private ["s10_IndexableP", "intersection"]
+- !private ["s10_IndexableP", "isSubset"]
+- !private ["s10_IndexableP", "remove"]
+- !private ["s10_IndexableP", "removeFirst"]
+- !private ["s10_IndexableP", "subtracting"]
+- !private ["s10_IndexableP", "symmetricDifference"]
+- !private ["s10_IndexableP", "union"]
+- !private ["s14_IndexableBaseP", "contains"]
+- !private ["s14_IndexableBaseP", "enumerated"]
+- !private ["s14_IndexableBaseP", "init"]
+- !private ["s14_IndexableBaseP", "insert"]
+- !private ["s14_IndexableBaseP", "intersection"]
+- !private ["s14_IndexableBaseP", "isSubset"]
+- !private ["s14_IndexableBaseP", "remove"]
+- !private ["s14_IndexableBaseP", "removeFirst"]
+- !private ["s14_IndexableBaseP", "subtracting"]
+- !private ["s14_IndexableBaseP", "symmetricDifference"]
+- !private ["s14_IndexableBaseP", "union"]
+- !private ["10Foundation13_NSBridgeableP", "contains"]
+- !private ["10Foundation13_NSBridgeableP", "enumerated"]
+- !private ["10Foundation13_NSBridgeableP", "init"]
+- !private ["10Foundation13_NSBridgeableP", "insert"]
+- !private ["10Foundation13_NSBridgeableP", "intersection"]
+- !private ["10Foundation13_NSBridgeableP", "isSubset"]
+- !private ["10Foundation13_NSBridgeableP", "remove"]
+- !private ["10Foundation13_NSBridgeableP", "removeFirst"]
+- !private ["10Foundation13_NSBridgeableP", "subtracting"]
+- !private ["10Foundation13_NSBridgeableP", "symmetricDifference"]
+- !private ["10Foundation13_NSBridgeableP", "union"]
+- !private ["10Foundation17_ObjectBridgeableP", "_getBuiltinLogicValue"]
+- !private ["10Foundation17_ObjectBridgeableP", "contains"]
+- !private ["10Foundation17_ObjectBridgeableP", "enumerated"]
+- !private ["10Foundation17_ObjectBridgeableP", "init"]
+- !private ["10Foundation17_ObjectBridgeableP", "insert"]
+- !private ["10Foundation17_ObjectBridgeableP", "intersection"]
+- !private ["10Foundation17_ObjectBridgeableP", "isSubset"]
+- !private ["10Foundation17_ObjectBridgeableP", "remove"]
+- !private ["10Foundation17_ObjectBridgeableP", "removeFirst"]
+- !private ["10Foundation17_ObjectBridgeableP", "subtracting"]
+- !private ["10Foundation17_ObjectBridgeableP", "symmetricDifference"]
+- !private ["10Foundation17_ObjectBridgeableP", "union"]
+- !private ["10Foundation21_ObjectTypeBridgeableP", "_getBuiltinLogicValue"]
+- !private ["10Foundation21_ObjectTypeBridgeableP", "contains"]
+- !private ["10Foundation21_ObjectTypeBridgeableP", "enumerated"]
+- !private ["10Foundation21_ObjectTypeBridgeableP", "init"]
+- !private ["10Foundation21_ObjectTypeBridgeableP", "insert"]
+- !private ["10Foundation21_ObjectTypeBridgeableP", "intersection"]
+- !private ["10Foundation21_ObjectTypeBridgeableP", "isSubset"]
+- !private ["10Foundation21_ObjectTypeBridgeableP", "remove"]
+- !private ["10Foundation21_ObjectTypeBridgeableP", "removeFirst"]
+- !private ["10Foundation21_ObjectTypeBridgeableP", "subtracting"]
+- !private ["10Foundation21_ObjectTypeBridgeableP", "symmetricDifference"]
+- !private ["10Foundation21_ObjectTypeBridgeableP", "union"]
+- !private ["s26_RangeReplaceableIndexableP", "init"]
+- !private ["s16_SwiftStringViewP", "init"]
+depends-nominal:
+- !private "s23BidirectionalCollectionP"
+- !private "Sb"
+- !private "s10CollectionP"
+- !private "s10ComparableP"
+- !private "s28CustomDebugStringConvertibleP"
+- !private "s29CustomPlaygroundQuickLookableP"
+- !private "s17CustomReflectableP"
+- !private "s23CustomStringConvertibleP"
+- !private "s9DecodableP"
+- !private "s9EncodableP"
+- !private "s9EquatableP"
+- !private "s25ExpressibleByArrayLiteralP"
+- !private "s27ExpressibleByBooleanLiteralP"
+- !private "s43ExpressibleByExtendedGraphemeClusterLiteralP"
+- !private "s26ExpressibleByStringLiteralP"
+- !private "s33ExpressibleByUnicodeScalarLiteralP"
+- !private "s8HashableP"
+- !private "s25LosslessStringConvertibleP"
+- !private "s10MirrorPathP"
+- !private "s26RangeReplaceableCollectionP"
+- !private "s8SequenceP"
+- !private "s3SetV"
+- !private "s10SetAlgebraP"
+- "11Swift_Linux6SetOBJC"
+- !private "SS"
+- !private "s14StringProtocolP"
+- !private "s16TextOutputStreamP"
+- !private "s20TextOutputStreamableP"
+- !private "s23_BidirectionalIndexableP"
+- !private "10Foundation13_CFBridgeableP"
+- !private "s35_ExpressibleByBuiltinBooleanLiteralP"
+- !private "s51_ExpressibleByBuiltinExtendedGraphemeClusterLiteralP"
+- !private "s34_ExpressibleByBuiltinStringLiteralP"
+- !private "s39_ExpressibleByBuiltinUTF16StringLiteralP"
+- !private "s41_ExpressibleByBuiltinUnicodeScalarLiteralP"
+- !private "s33_ExpressibleByStringInterpolationP"
+- !private "s10_IndexableP"
+- !private "s14_IndexableBaseP"
+- !private "10Foundation13_NSBridgeableP"
+- !private "10Foundation17_ObjectBridgeableP"
+- !private "10Foundation21_ObjectTypeBridgeableP"
+- !private "s26_RangeReplaceableIndexableP"
+- !private "s16_SwiftStringViewP"
+depends-dynamic-lookup:
+depends-external:
+- "/home/admindyn/Desktop/swift-4.0-DEVELOPMENT-SNAPSHOT-2017-12-04-a-ubuntu16.10/usr/lib/swift/linux/x86_64/Glibc.swiftmodule"
+- "/home/admindyn/Desktop/swift-4.0-DEVELOPMENT-SNAPSHOT-2017-12-04-a-ubuntu16.10/usr/lib/swift/linux/x86_64/Dispatch.swiftmodule"
+- "/home/admindyn/Desktop/swift-4.0-DEVELOPMENT-SNAPSHOT-2017-12-04-a-ubuntu16.10/usr/lib/swift/linux/x86_64/Foundation.swiftmodule"
+- "/home/admindyn/Desktop/swift-4.0-DEVELOPMENT-SNAPSHOT-2017-12-04-a-ubuntu16.10/usr/lib/swift/linux/x86_64/Swift.swiftmodule"
+- "/home/admindyn/Desktop/swift-4.0-DEVELOPMENT-SNAPSHOT-2017-12-04-a-ubuntu16.10/usr/lib/swift/linux/x86_64/SwiftOnoneSupport.swiftmodule"
+- "/home/admindyn/Desktop/swift-4.0-DEVELOPMENT-SNAPSHOT-2017-12-04-a-ubuntu16.10/usr/lib/swift/linux/x86_64/glibc.modulemap"
+interface-hash: "f527933f6777771e9d59e1292ca0c7c6"

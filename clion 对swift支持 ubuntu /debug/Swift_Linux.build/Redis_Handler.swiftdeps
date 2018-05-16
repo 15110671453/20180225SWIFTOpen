@@ -1,0 +1,274 @@
+### Swift dependencies file v0 ###
+provides-top-level:
+- "WUNTRACED"
+- "WNOHANG"
+- "SIGTERM"
+- "Redis_Handler"
+provides-nominal:
+- "11Swift_Linux13Redis_HandlerC"
+provides-member:
+- ["11Swift_Linux13Redis_HandlerC", ""]
+depends-top-level:
+- !private "+"
+- !private "-"
+- !private ">"
+- !private "AssignmentPrecedence"
+- !private "Data"
+- "FloatLiteralType"
+- "Int32"
+- !private "Int8"
+- "IntegerLiteralType"
+- !private "MemoryLayout"
+- "Redis_Handler"
+- "SIGTERM"
+- !private "String"
+- !private "StringLiteralType"
+- !private "UnsafeMutablePointer"
+- !private "UnsafeMutableRawPointer"
+- !private "UnsafePointer"
+- "WNOHANG"
+- "WUNTRACED"
+- !private "print"
+- !private "redisContext"
+- !private "redisReply"
+depends-member:
+- !private ["s23BidirectionalCollectionP", "Deallocator"]
+- !private ["s23BidirectionalCollectionP", "Encoding"]
+- !private ["s23BidirectionalCollectionP", "init"]
+- !private ["s23BidirectionalCollectionP", "withCString"]
+- ["s13BinaryIntegerP", "init"]
+- ["s7CVarArgP", "init"]
+- !private ["s10CollectionP", "Deallocator"]
+- !private ["s10CollectionP", "Encoding"]
+- !private ["s10CollectionP", "init"]
+- !private ["s10CollectionP", "withCString"]
+- !private ["s10ComparableP", "Encoding"]
+- ["s10ComparableP", "init"]
+- !private ["s10ComparableP", "withCString"]
+- !private ["s28CustomDebugStringConvertibleP", "Deallocator"]
+- !private ["s28CustomDebugStringConvertibleP", "Encoding"]
+- !private ["s28CustomDebugStringConvertibleP", "init"]
+- !private ["s28CustomDebugStringConvertibleP", "withCString"]
+- !private ["s29CustomPlaygroundQuickLookableP", "Encoding"]
+- ["s29CustomPlaygroundQuickLookableP", "init"]
+- !private ["s29CustomPlaygroundQuickLookableP", "withCString"]
+- !private ["s17CustomReflectableP", "Deallocator"]
+- !private ["s17CustomReflectableP", "Encoding"]
+- ["s17CustomReflectableP", "init"]
+- !private ["s17CustomReflectableP", "withCString"]
+- !private ["s23CustomStringConvertibleP", "Deallocator"]
+- !private ["s23CustomStringConvertibleP", "Encoding"]
+- ["s23CustomStringConvertibleP", "init"]
+- !private ["s23CustomStringConvertibleP", "utf8"]
+- !private ["s23CustomStringConvertibleP", "withCString"]
+- !private ["10Foundation4DataV", "Deallocator"]
+- !private ["10Foundation4DataV", "init"]
+- !private ["10Foundation4DataV11DeallocatorO", "none"]
+- !private ["s9DecodableP", "Deallocator"]
+- !private ["s9DecodableP", "Encoding"]
+- ["s9DecodableP", "init"]
+- !private ["s9DecodableP", "withCString"]
+- !private ["s9EncodableP", "Deallocator"]
+- !private ["s9EncodableP", "Encoding"]
+- ["s9EncodableP", "init"]
+- !private ["s9EncodableP", "withCString"]
+- !private ["SS10FoundationE8EncodingV", "utf8"]
+- !private ["s9EquatableP", "Deallocator"]
+- !private ["s9EquatableP", "Encoding"]
+- ["s9EquatableP", "init"]
+- !private ["s9EquatableP", "utf8"]
+- !private ["s9EquatableP", "withCString"]
+- !private ["s43ExpressibleByExtendedGraphemeClusterLiteralP", "Encoding"]
+- !private ["s43ExpressibleByExtendedGraphemeClusterLiteralP", "init"]
+- !private ["s43ExpressibleByExtendedGraphemeClusterLiteralP", "withCString"]
+- ["s27ExpressibleByIntegerLiteralP", "init"]
+- !private ["s26ExpressibleByStringLiteralP", "Encoding"]
+- !private ["s26ExpressibleByStringLiteralP", "init"]
+- !private ["s26ExpressibleByStringLiteralP", "withCString"]
+- !private ["s33ExpressibleByUnicodeScalarLiteralP", "Encoding"]
+- !private ["s33ExpressibleByUnicodeScalarLiteralP", "init"]
+- !private ["s33ExpressibleByUnicodeScalarLiteralP", "withCString"]
+- ["s17FixedWidthIntegerP", "init"]
+- !private ["s8HashableP", "Deallocator"]
+- !private ["s8HashableP", "Encoding"]
+- ["s8HashableP", "init"]
+- !private ["s8HashableP", "utf8"]
+- !private ["s8HashableP", "withCString"]
+- ["s5Int32V", "init"]
+- !private ["s4Int8V", "init"]
+- !private ["s25LosslessStringConvertibleP", "Encoding"]
+- ["s25LosslessStringConvertibleP", "init"]
+- !private ["s25LosslessStringConvertibleP", "withCString"]
+- !private ["s10MirrorPathP", "Encoding"]
+- !private ["s10MirrorPathP", "init"]
+- !private ["s10MirrorPathP", "withCString"]
+- !private ["s17MutableCollectionP", "Deallocator"]
+- !private ["s17MutableCollectionP", "init"]
+- ["s7NumericP", "init"]
+- !private ["s22RandomAccessCollectionP", "Deallocator"]
+- !private ["s22RandomAccessCollectionP", "init"]
+- !private ["s26RangeReplaceableCollectionP", "Deallocator"]
+- !private ["s26RangeReplaceableCollectionP", "Encoding"]
+- !private ["s26RangeReplaceableCollectionP", "init"]
+- !private ["s26RangeReplaceableCollectionP", "withCString"]
+- !private ["s16RawRepresentableP", "utf8"]
+- !private ["11Swift_Linux13Redis_HandlerC", "Data"]
+- !private ["11Swift_Linux13Redis_HandlerC", "Int8"]
+- !private ["11Swift_Linux13Redis_HandlerC", "MemoryLayout"]
+- !private ["11Swift_Linux13Redis_HandlerC", "String"]
+- !private ["11Swift_Linux13Redis_HandlerC", "UnsafeMutablePointer"]
+- !private ["11Swift_Linux13Redis_HandlerC", "UnsafeMutableRawPointer"]
+- !private ["11Swift_Linux13Redis_HandlerC", "UnsafePointer"]
+- ["11Swift_Linux13Redis_HandlerC", "deinit"]
+- ["11Swift_Linux13Redis_HandlerC", "init"]
+- !private ["11Swift_Linux13Redis_HandlerC", "print"]
+- !private ["11Swift_Linux13Redis_HandlerC", "redisContext"]
+- !private ["11Swift_Linux13Redis_HandlerC", "redisReply"]
+- ["11Swift_Linux13Redis_HandlerC", "test"]
+- !private ["10Foundation20ReferenceConvertibleP", "Deallocator"]
+- !private ["10Foundation20ReferenceConvertibleP", "init"]
+- !private ["s8SequenceP", "Deallocator"]
+- !private ["s8SequenceP", "Encoding"]
+- !private ["s8SequenceP", "init"]
+- !private ["s8SequenceP", "withCString"]
+- ["s13SignedIntegerP", "init"]
+- ["s13SignedNumericP", "init"]
+- ["s10StrideableP", "init"]
+- !private ["SS", "Encoding"]
+- !private ["SS", "init"]
+- !private ["SS", "withCString"]
+- !private ["s14StringProtocolP", "Encoding"]
+- !private ["s14StringProtocolP", "init"]
+- !private ["s14StringProtocolP", "withCString"]
+- !private ["s16TextOutputStreamP", "Encoding"]
+- !private ["s16TextOutputStreamP", "init"]
+- !private ["s16TextOutputStreamP", "withCString"]
+- !private ["s20TextOutputStreamableP", "Encoding"]
+- !private ["s20TextOutputStreamableP", "init"]
+- !private ["s20TextOutputStreamableP", "withCString"]
+- !private ["s23_BidirectionalIndexableP", "Deallocator"]
+- !private ["s23_BidirectionalIndexableP", "Encoding"]
+- !private ["s23_BidirectionalIndexableP", "init"]
+- !private ["s23_BidirectionalIndexableP", "withCString"]
+- ["s18_BitwiseOperationsP", "init"]
+- !private ["10Foundation13_CFBridgeableP", "Deallocator"]
+- !private ["10Foundation13_CFBridgeableP", "Encoding"]
+- !private ["10Foundation13_CFBridgeableP", "init"]
+- !private ["10Foundation13_CFBridgeableP", "withCString"]
+- !private ["s51_ExpressibleByBuiltinExtendedGraphemeClusterLiteralP", "Encoding"]
+- !private ["s51_ExpressibleByBuiltinExtendedGraphemeClusterLiteralP", "init"]
+- !private ["s51_ExpressibleByBuiltinExtendedGraphemeClusterLiteralP", "withCString"]
+- ["s35_ExpressibleByBuiltinIntegerLiteralP", "init"]
+- !private ["s34_ExpressibleByBuiltinStringLiteralP", "Encoding"]
+- !private ["s34_ExpressibleByBuiltinStringLiteralP", "init"]
+- !private ["s34_ExpressibleByBuiltinStringLiteralP", "withCString"]
+- !private ["s39_ExpressibleByBuiltinUTF16StringLiteralP", "Encoding"]
+- !private ["s39_ExpressibleByBuiltinUTF16StringLiteralP", "init"]
+- !private ["s39_ExpressibleByBuiltinUTF16StringLiteralP", "withCString"]
+- !private ["s41_ExpressibleByBuiltinUnicodeScalarLiteralP", "Encoding"]
+- !private ["s41_ExpressibleByBuiltinUnicodeScalarLiteralP", "init"]
+- !private ["s41_ExpressibleByBuiltinUnicodeScalarLiteralP", "withCString"]
+- !private ["s33_ExpressibleByStringInterpolationP", "Encoding"]
+- !private ["s33_ExpressibleByStringInterpolationP", "init"]
+- !private ["s33_ExpressibleByStringInterpolationP", "withCString"]
+- !private ["s10_IndexableP", "Deallocator"]
+- !private ["s10_IndexableP", "Encoding"]
+- !private ["s10_IndexableP", "init"]
+- !private ["s10_IndexableP", "withCString"]
+- !private ["s14_IndexableBaseP", "Deallocator"]
+- !private ["s14_IndexableBaseP", "Encoding"]
+- !private ["s14_IndexableBaseP", "init"]
+- !private ["s14_IndexableBaseP", "withCString"]
+- !private ["s17_MutableIndexableP", "Deallocator"]
+- !private ["s17_MutableIndexableP", "init"]
+- !private ["10Foundation13_NSBridgeableP", "Deallocator"]
+- !private ["10Foundation13_NSBridgeableP", "Encoding"]
+- !private ["10Foundation13_NSBridgeableP", "init"]
+- !private ["10Foundation13_NSBridgeableP", "withCString"]
+- !private ["10Foundation17_ObjectBridgeableP", "Deallocator"]
+- !private ["10Foundation17_ObjectBridgeableP", "Encoding"]
+- ["10Foundation17_ObjectBridgeableP", "init"]
+- !private ["10Foundation17_ObjectBridgeableP", "withCString"]
+- !private ["10Foundation21_ObjectTypeBridgeableP", "Deallocator"]
+- !private ["10Foundation21_ObjectTypeBridgeableP", "Encoding"]
+- ["10Foundation21_ObjectTypeBridgeableP", "init"]
+- !private ["10Foundation21_ObjectTypeBridgeableP", "withCString"]
+- !private ["s22_RandomAccessIndexableP", "Deallocator"]
+- !private ["s22_RandomAccessIndexableP", "init"]
+- !private ["s26_RangeReplaceableIndexableP", "Deallocator"]
+- !private ["s26_RangeReplaceableIndexableP", "Encoding"]
+- !private ["s26_RangeReplaceableIndexableP", "init"]
+- !private ["s26_RangeReplaceableIndexableP", "withCString"]
+- ["s11_StrideableP", "init"]
+- !private ["s16_SwiftStringViewP", "Encoding"]
+- !private ["s16_SwiftStringViewP", "init"]
+- !private ["s16_SwiftStringViewP", "withCString"]
+depends-nominal:
+- !private "s23BidirectionalCollectionP"
+- "s13BinaryIntegerP"
+- "s7CVarArgP"
+- !private "s10CollectionP"
+- "s10ComparableP"
+- !private "s28CustomDebugStringConvertibleP"
+- "s29CustomPlaygroundQuickLookableP"
+- "s17CustomReflectableP"
+- "s23CustomStringConvertibleP"
+- !private "10Foundation4DataV"
+- !private "10Foundation4DataV11DeallocatorO"
+- "s9DecodableP"
+- "s9EncodableP"
+- !private "SS10FoundationE8EncodingV"
+- "s9EquatableP"
+- !private "s43ExpressibleByExtendedGraphemeClusterLiteralP"
+- "s27ExpressibleByIntegerLiteralP"
+- !private "s26ExpressibleByStringLiteralP"
+- !private "s33ExpressibleByUnicodeScalarLiteralP"
+- "s17FixedWidthIntegerP"
+- "s8HashableP"
+- "s5Int32V"
+- !private "s4Int8V"
+- "s25LosslessStringConvertibleP"
+- !private "s10MirrorPathP"
+- !private "s17MutableCollectionP"
+- "s7NumericP"
+- !private "s22RandomAccessCollectionP"
+- !private "s26RangeReplaceableCollectionP"
+- !private "s16RawRepresentableP"
+- "11Swift_Linux13Redis_HandlerC"
+- !private "10Foundation20ReferenceConvertibleP"
+- !private "s8SequenceP"
+- "s13SignedIntegerP"
+- "s13SignedNumericP"
+- "s10StrideableP"
+- !private "SS"
+- !private "s14StringProtocolP"
+- !private "s16TextOutputStreamP"
+- !private "s20TextOutputStreamableP"
+- !private "s23_BidirectionalIndexableP"
+- "s18_BitwiseOperationsP"
+- !private "10Foundation13_CFBridgeableP"
+- !private "s51_ExpressibleByBuiltinExtendedGraphemeClusterLiteralP"
+- "s35_ExpressibleByBuiltinIntegerLiteralP"
+- !private "s34_ExpressibleByBuiltinStringLiteralP"
+- !private "s39_ExpressibleByBuiltinUTF16StringLiteralP"
+- !private "s41_ExpressibleByBuiltinUnicodeScalarLiteralP"
+- !private "s33_ExpressibleByStringInterpolationP"
+- !private "s10_IndexableP"
+- !private "s14_IndexableBaseP"
+- !private "s17_MutableIndexableP"
+- !private "10Foundation13_NSBridgeableP"
+- "10Foundation17_ObjectBridgeableP"
+- "10Foundation21_ObjectTypeBridgeableP"
+- !private "s22_RandomAccessIndexableP"
+- !private "s26_RangeReplaceableIndexableP"
+- "s11_StrideableP"
+- !private "s16_SwiftStringViewP"
+depends-dynamic-lookup:
+depends-external:
+- "/home/admindyn/Desktop/swift-4.0-DEVELOPMENT-SNAPSHOT-2017-12-04-a-ubuntu16.10/usr/lib/swift/linux/x86_64/Glibc.swiftmodule"
+- "/home/admindyn/Desktop/swift-4.0-DEVELOPMENT-SNAPSHOT-2017-12-04-a-ubuntu16.10/usr/lib/swift/linux/x86_64/Dispatch.swiftmodule"
+- "/home/admindyn/Desktop/swift-4.0-DEVELOPMENT-SNAPSHOT-2017-12-04-a-ubuntu16.10/usr/lib/swift/linux/x86_64/Foundation.swiftmodule"
+- "/home/admindyn/Desktop/swift-4.0-DEVELOPMENT-SNAPSHOT-2017-12-04-a-ubuntu16.10/usr/lib/swift/linux/x86_64/Swift.swiftmodule"
+- "/home/admindyn/Desktop/swift-4.0-DEVELOPMENT-SNAPSHOT-2017-12-04-a-ubuntu16.10/usr/lib/swift/linux/x86_64/SwiftOnoneSupport.swiftmodule"
+- "/home/admindyn/Desktop/swift-4.0-DEVELOPMENT-SNAPSHOT-2017-12-04-a-ubuntu16.10/usr/lib/swift/linux/x86_64/glibc.modulemap"
+interface-hash: "33b96cac88d2bbd73831f3ece3d6886a"
