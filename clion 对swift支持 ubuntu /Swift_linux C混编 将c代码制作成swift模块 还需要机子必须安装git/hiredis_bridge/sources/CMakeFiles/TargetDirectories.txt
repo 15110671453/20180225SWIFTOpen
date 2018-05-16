@@ -1,0 +1,5 @@
+/home/admindyn/CLionProjects/Swift_Linux/Sources/hiredis_bridge/sources/CMakeFiles/rebuild_cache.dir
+/home/admindyn/CLionProjects/Swift_Linux/Sources/hiredis_bridge/sources/CMakeFiles/edit_cache.dir
+/home/admindyn/CLionProjects/Swift_Linux/Sources/hiredis_bridge/sources/sources/CMakeFiles/rebuild_cache.dir
+/home/admindyn/CLionProjects/Swift_Linux/Sources/hiredis_bridge/sources/sources/CMakeFiles/hiredis_bridge.dir
+/home/admindyn/CLionProjects/Swift_Linux/Sources/hiredis_bridge/sources/sources/CMakeFiles/edit_cache.dir

@@ -1,0 +1,7 @@
+module CHiredis [system] {
+    header "../redis/hiredis.h"
+    header "./hiredis_bridge.h"
+    link "hiredis"
+    link "hiredis_bridge"
+    export *
+}

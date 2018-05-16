@@ -1,0 +1,44 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/admindyn/CLionProjects/Swift_Linux/Sources/hiredis_bridge/sources/hiredis_bridge.c
+hiredis_bridge.h
+/home/admindyn/CLionProjects/Swift_Linux/Sources/hiredis_bridge/sources/hiredis_bridge.h
+hiredis.h
+/home/admindyn/CLionProjects/Swift_Linux/Sources/hiredis_bridge/sources/hiredis.h
+
+/home/admindyn/CLionProjects/Swift_Linux/Sources/hiredis_bridge/sources/hiredis_bridge.h
+stdio.h
+-
+hiredis.h
+/home/admindyn/CLionProjects/Swift_Linux/Sources/hiredis_bridge/sources/hiredis.h
+
+/home/admindyn/CLionProjects/Swift_Linux/Sources/redis/hiredis.h
+read.h
+/home/admindyn/CLionProjects/Swift_Linux/Sources/redis/read.h
+stdarg.h
+-
+sys/time.h
+-
+stdint.h
+-
+sds.h
+/home/admindyn/CLionProjects/Swift_Linux/Sources/redis/sds.h
+
+/home/admindyn/CLionProjects/Swift_Linux/Sources/redis/read.h
+stdio.h
+-
+
+/home/admindyn/CLionProjects/Swift_Linux/Sources/redis/sds.h
+sys/types.h
+-
+stdarg.h
+-
+stdint.h
+-
+

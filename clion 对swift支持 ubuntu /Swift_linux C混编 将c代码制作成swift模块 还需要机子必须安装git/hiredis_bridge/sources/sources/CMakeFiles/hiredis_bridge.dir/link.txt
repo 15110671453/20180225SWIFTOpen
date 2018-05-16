@@ -1,0 +1,2 @@
+/usr/bin/ar qc ../libdir/libhiredis_bridge.a  CMakeFiles/hiredis_bridge.dir/hiredis_bridge.c.o
+/usr/bin/ranlib ../libdir/libhiredis_bridge.a
