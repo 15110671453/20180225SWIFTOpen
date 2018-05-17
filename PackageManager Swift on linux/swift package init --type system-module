@@ -1,0 +1,24 @@
+swift package init --type system-module
+
+它到底 是指支持 brew apt 
+
+还是 自己建的c库 也行
+
+
+$ mkdir CSwift
+$ cd CSwift
+$ swift package init --type=system-module
+$ mkdir CSwift
+$ cd CSwift
+$ swift package init
+$ mv Tests ..
+$ mkdir include
+$ mv ../module.modulemap inlcude/
+$ rm Package.swift
+$ rm -rf Sources
+$ echo > CSwift.c
+$ echo > include/CSwift.h
+$ cd ..
+
+
+https://github.com/RockfordWei/CSwift

@@ -1,0 +1,110 @@
+swift PackageManager 依赖git的使用 linux机子先安装git module.modulemap  
+
+admindyn@ubuntu:~/CLionProjects/Swift_Linux/Sources$ cd CHiredis/
+admindyn@ubuntu:~/CLionProjects/Swift_Linux/Sources/CHiredis$ ls -la
+total 40
+drwxr-xr-x 4 admindyn admindyn 4096 May 16 18:25 .
+drwxrwxrwx 4 admindyn admindyn 4096 May 16 18:44 ..
+-rw-r--r-- 1 admindyn admindyn  751 May 16 02:21 hiredis_bridge.c
+-rw-r--r-- 1 admindyn admindyn  337 May  9 23:05 hiredis_bridge.h
+drwxr-xr-x 2 admindyn admindyn 4096 May 16 18:25 include
+-rw-r--r-- 1 admindyn admindyn 9410 May 16 02:48 libhiredis_bridge.a
+-rw-r--r-- 1 admindyn admindyn  146 May 16 03:12 Package.swift
+drwxr-xr-x 2 admindyn admindyn 4096 May  9 21:12 redis
+admindyn@ubuntu:~/CLionProjects/Swift_Linux/Sources/CHiredis$ git init 
+Initialized empty Git repository in /home/admindyn/CLionProjects/Swift_Linux/Sources/CHiredis/.git/
+admindyn@ubuntu:~/CLionProjects/Swift_Linux/Sources/CHiredis$ git add .
+admindyn@ubuntu:~/CLionProjects/Swift_Linux/Sources/CHiredis$ git commit -m "CHredis"
+
+*** Please tell me who you are.
+
+Run
+
+  git config --global user.email "you@example.com"
+  git config --global user.name "Your Name"
+
+to set your account's default identity.
+Omit --global to set the identity only in this repository.
+
+fatal: unable to auto-detect email address (got 'admindyn@ubuntu.(none)')
+admindyn@ubuntu:~/CLionProjects/Swift_Linux/Sources/CHiredis$ git config 15110671453@163.com
+error: invalid key: 15110671453@163.com
+admindyn@ubuntu:~/CLionProjects/Swift_Linux/Sources/CHiredis$ git config --global user.email 15110671453@163.com
+admindyn@ubuntu:~/CLionProjects/Swift_Linux/Sources/CHiredis$ git config --global user.name 15110671453
+admindyn@ubuntu:~/CLionProjects/Swift_Linux/Sources/CHiredis$ git commit -m "CHredis"
+[master (root-commit) d3fa00c] CHredis
+ 10 files changed, 684 insertions(+)
+ create mode 100644 Package.swift
+ create mode 100644 hiredis_bridge.c
+ create mode 100644 hiredis_bridge.h
+ create mode 100644 include/module.modulemap
+ create mode 100644 libhiredis_bridge.a
+ create mode 100644 redis/.DS_Store
+ create mode 100644 redis/hiredis.h
+ create mode 100644 redis/libhiredis.a
+ create mode 100644 redis/read.h
+ create mode 100644 redis/sds.h
+admindyn@ubuntu:~/CLionProjects/Swift_Linux/Sources/CHiredis$ git tag 1.0.0
+admindyn@ubuntu:~/CLionProjects/Swift_Linux/Sources/CHiredis$ 
+
+
+
+
+自己 编写制作 c module 方便 我们 混编 c 与 swift
+
+
+error: package has unsupported layout; modulemap '/home/admindyn/CLionProjects/Swift_Linux/Sources/CHiredis/include/module.modulemap' should be inside the 'include' directory
+
+
+注意 Package module 的 制作标准  首先 目录结构要对  
+
+
+
+error: package has unsupported layout; found loose source files: /home/admindyn/CLionProjects/Swift_Linux/.build/checkouts/CHiredis--6135860774682205509/sources/hiredis_bridge.c
+
+
+这里 提出 有c 文件 直接暴露出来 一定要全部制作为 静态库  并且只包含头文件 不要c源文件
+
+
+一下 我们的module 在制作git 时 只有module.modulemap package.swift 但是 你看 提交时  生成的  一些自动的目录 与 文件
+
+admindyn@ubuntu:~/CLionProjects/Swift_Linux$ cd CHiredis/
+admindyn@ubuntu:~/CLionProjects/Swift_Linux/CHiredis$ git init
+Reinitialized existing Git repository in /home/admindyn/CLionProjects/Swift_Linux/CHiredis/.git/
+admindyn@ubuntu:~/CLionProjects/Swift_Linux/CHiredis$ git add .
+admindyn@ubuntu:~/CLionProjects/Swift_Linux/CHiredis$ git commit -m "888"
+[master 0f9dc00] 888
+ 10 files changed, 12 insertions(+), 638 deletions(-)
+ delete mode 100644 include/module.modulemap
+ create mode 100644 module.modulemap
+ delete mode 100644 sources/hiredis_bridge.h
+ delete mode 100644 sources/libhiredis_bridge.a
+ delete mode 100644 sources/redis/.DS_Store
+ delete mode 100644 sources/redis/hiredis.h
+ delete mode 100644 sources/redis/libhiredis.a
+ delete mode 100644 sources/redis/read.h
+ delete mode 100644 sources/redis/sds.h
+admindyn@ubuntu:~/CLionProjects/Swift_Linux/CHiredis$ git tag 2.3.0
+admindyn@ubuntu:~/CLionProjects/Swift_Linux/CHiredis$ 
+
+
+
+还是 报错 我们 在linux 建立 swift 工程 虽然 使用clion 但是我们 将其生成的工程模版删除 只使用它提供的swift 编码环境 和 编译环境
+
+工程结构 使用 一下 Swift Package Manager 帮我们完成
+admindyn@ubuntu:~$ cd '/home/admindyn/CLionProjects/Swift_Linux' 
+admindyn@ubuntu:~/CLionProjects/Swift_Linux$ swift package init --type executable
+Creating executable package: Swift_Linux
+Creating Package.swift
+Creating README.md
+Creating .gitignore
+Creating Sources/
+Creating Sources/Swift_Linux/main.swift
+Creating Tests/
+admindyn@ubuntu:~/CLionProjects/Swift_Linux$ 
+
+
+
+另外注意 每次 修改 module.modulemap  一定要 git add  然后 git commit
+
+

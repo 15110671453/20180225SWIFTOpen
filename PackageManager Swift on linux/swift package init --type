@@ -1,0 +1,21 @@
+swift package init --type
+
+swift Package Manager https://swift.org/package-manager/
+
+swift package init --type executable
+
+executable
+
+library
+
+swift package init --type library
+
+
+system 
+
+swift package init --type system-module
+
+https://blog.csdn.net/ultrapro/article/details/78890718
+https://oleb.net/blog/2017/12/importing-c-library-into-swift/
+
+How to import a C library in Swift using the Swift Package Manager

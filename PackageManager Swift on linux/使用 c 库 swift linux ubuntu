@@ -1,0 +1,111 @@
+使用 c 库 Swift Package Manager swift linux ubuntu
+
+首先 并不是 所有任意写的 c库 都可以 制作为swift 的c module
+
+Linking ./.build/x86_64-unknown-linux/debug/Swift_Linux
+/usr/bin/ld.gold: error: hiredis: no archive symbol table (run ranlib)
+/usr/bin/ld.gold: error: cannot find -lhiredis_bridge
+/home/admindyn/CLionProjects/Swift_Linux/Sources/Swift_Linux/main.swift:31: error: undefined reference to 'redisConnect'
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+<unknown>:0: error: link command failed with exit code 1 (use -v to see invocation)
+error: terminated(1): /home/admindyn/Desktop/swift-4.0-DEVELOPMENT-SNAPSHOT-2017-12-04-a-ubuntu16.10/usr/bin/swift-build-tool -f /home/admindyn/CLionProjects/Swift_Linux/.build/debug.yaml main
+Updating /home/admindyn/CLionProjects/Swift_Linux/Sources/Swift_Linux/include/CHiredis
+Resolving /home/admindyn/CLionProjects/Swift_Linux/Sources/Swift_Linux/include/CHiredis at 3.0.0
+
+
+我们 没有采用 apt brew  发现 
+
+成功了 但是在最后链接的时候 还是报错 不能 找到 对应的库
+
+
+
+第一 我们 编译 hiredis  hiredis_bridge 并且 移动到 /usr/include /usr/lib /usr/local/include /usr/local/lib 下 
+
+第二 我们 在CHiredis 中 swift package init -type sysytem-module
+import PackageDescription
+
+let package = Package(
+    name: "CHiredis",
+
+
+    dependencies: [
+        // Dependencies declare other packages that this package depends on.
+        // .package(url: /* package url */, from: "1.0.0"),
+    ]
+)
+这里 的 描述中 有用 pkgConfig 的 参考https://github.com/PerfectlySoft/Perfect-libcurl/blob/master/Package.swift
+
+但是 也可以不用这个字段
+
+
+第三 我们的应用程序 Swift_Linux 目录中 swift package init -type executable
+
+这里我们的应用程序使用clion 建立 我们在clion建立的工程目录下 执行swift package init -type executable
+
+并且配置clion 使用swift-build 编译程序  
+
+用 clion 是因为 clion 提供 ubuntu下swift 开发支持  代码 提示 等 编译等
+
+// swift-tools-version:4.0
+// The swift-tools-version declares the minimum version of Swift required to build this package.
+
+import PackageDescription
+
+let package = Package(
+        name: "Swift_Linux",
+        products: [
+            // Products define the executables and libraries produced by a package, and make them visible to other packages.
+            .executable(
+                    name: "Swift_Linux",
+                    targets: ["Swift_Linux"]),
+        ],
+        dependencies: [
+            // Dependencies declare other packages that this package depends on.
+            // .package(url: /* package url */, from: "1.0.0"),
+            .package(url: "./Sources/Swift_Linux/include/CHiredis", from: "3.0.0"),
+
+        ],
+        targets: [
+            // Targets are the basic building blocks of a package. A target can define a module or a test suite.
+            // Targets can depend on other targets in this package, and on products in packages which this package depends on.
+            .target(
+                    name: "Swift_Linux",
+                    dependencies: [])
+        ]
+)
+
+
+
+第四 最后 还是 报 找不到库  发现 llvm 有提到 支持 brew apt 安装的c 库
+
+自己整的估计不支持  获取我们可以将自己的库 导入到  apt的 本地仓库中来解决
+
+/home/admindyn/Desktop/swift-4.0-DEVELOPMENT-SNAPSHOT-2017-12-04-a-ubuntu16.10/usr/bin/swift-build
+Linking ./.build/x86_64-unknown-linux/debug/Swift_Linux
+/usr/bin/ld.gold: error: hiredis: no archive symbol table (run ranlib)
+/usr/bin/ld.gold: error: cannot find -lhiredis_bridge
+/home/admindyn/CLionProjects/Swift_Linux/Sources/Swift_Linux/main.swift:31: error: undefined reference to 'redisConnect'
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+<unknown>:0: error: link command failed with exit code 1 (use -v to see invocation)
+error: terminated(1): /home/admindyn/Desktop/swift-4.0-DEVELOPMENT-SNAPSHOT-2017-12-04-a-ubuntu16.10/usr/bin/swift-build-tool -f /home/admindyn/CLionProjects/Swift_Linux/.build/debug.yaml main
+Updating /home/admindyn/CLionProjects/Swift_Linux/Sources/Swift_Linux/include/CHiredis
+Resolving /home/admindyn/CLionProjects/Swift_Linux/Sources/Swift_Linux/include/CHiredis at 3.0.0
+
+Process finished with exit code 1
+
+第五 这里 由专业解释
+
+https://blog.csdn.net/ultrapro/article/details/78890718
+https://oleb.net/blog/2017/12/importing-c-library-into-swift/
+
+How to import a C library in Swift using the Swift Package Manager
+
+
+
+第六 以上 都是system-module 使用c 哪library 使用c呢
+
+参考
+https://github.com/PerfectlySoft/Perfect-Zip/blob/master/Package.swift
+
+
+
