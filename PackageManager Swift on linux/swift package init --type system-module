@@ -2,6 +2,34 @@ swift package init --type system-module
 
 它到底 是指支持 brew apt 
 
+对于 使用Brew apt 安装的c 库 使用 SPM 添加依赖
+
+module PerfectCBSON [system] {
+    header "shim.h"
+    link "bson-1.0"
+    export *
+}
+
+Package.swift
+
+import PackageDescription
+let package = Package(
+	name: "PerfectCBSON",
+	pkgConfig: "libbson-1.0",
+	providers: [
+		.brew(["mongo-c-driver"]),
+		.apt(["libbson-dev"]),
+	]
+)
+
+shim.h
+
+#define BCON_H_
+#include <bson.h>
+
+
+以上三个文件 都在同一级目录下 放置
+
 还是 自己建的c库 也行
 
 
